@@ -1,0 +1,80 @@
+@import "../common/dpl.less";
+
+.col-main{
+   .crumbs-nav{
+       padding-left:10px;
+       border-right:1px solid @base-border-color;
+       height:30px;
+       line-height:30px;
+       background:url("@{base-assets-url}/header-footer-bg.png") 0 -100px repeat-x #ddd;
+       margin-bottom: 10px;
+   }
+}
+
+.pic-manage{
+  .col-left(160px);
+  text-align:center;
+  .pic{
+    margin-bottom: 10px;
+  }
+  .submit-btn{
+    margin-top: 10px;
+  }
+}
+.tag-manage{
+  .wrap(auto);
+  .tag-tree{
+     .col-left(300px);
+     .wijmo-wijtree{
+      width:285px;
+      .min-height(400px);
+   }
+  }
+  .tag-list{
+     .col-right(473px);
+     padding-left:10px;
+     li{
+       padding:5px 10px;
+       border:1px solid @base-border-color;
+       margin:0 10px 10px 0;
+       overflow:hidden;
+       text-align:center; 
+     }
+     input,button{
+        margin:0 10px;
+        display:inline-block;
+     }
+     button{
+        padding:0 15px;
+     }
+     .rel-tag{
+       display:inline-block;
+       width:110px;
+       color:#b10000;
+     }
+     .rel-tag-factor{
+       width:50px;
+       text-align:center;
+     }
+     .rel-tag-mark {
+       display:inline-block;
+       font-size:20px;
+       vertical-align:middle;
+       visibility:hidden;
+     }
+     .rel-tag-unsave{
+       color:#f00;
+       visibility:visible;
+     }
+     .rel-tag-saved{
+       color:#0f0;
+       visibility:visible;
+     }
+  }
+  .del-all-tag{
+     position:absolute;
+     top:-40px;
+     right:10px;
+  } 
+}
+

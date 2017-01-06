@@ -1,0 +1,7 @@
+<meta charset="utf-8"/>
+<title>CMS-$!{consoleConfig.appTitle}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="$!{consoleConfig.assetsRoot}lib/extjs/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="${consoleConfig.assetsRoot}lib/extjs/css/RowEditor.css"/>
+<script type="text/javascript"	src="${consoleConfig.assetsRoot}lib/extjs/ext-base.js"></script>
+<script type="text/javascript" src="${consoleConfig.assetsRoot}lib/extjs/ext-all-debug.js"></script>

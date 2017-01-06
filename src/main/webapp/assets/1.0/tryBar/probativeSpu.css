@@ -1,0 +1,87 @@
+
+#content .probativeSpucontent{
+	margin-top:20px;
+	width:930px;
+}
+
+#trailThisweek{
+	height:565px;
+	overflow:scroll;
+	border:thin double #d1d0d1;
+}
+
+.pageTitle{
+	width: 990px;
+	height: 30px;
+	background: #d1d0d1;
+	line-height: 30px;
+	border-bottom-color: #000;
+}
+.item{
+	width:545px;
+	height:165px;
+	border:thin solid #d1d0d1;
+	margin-top:30px;
+	margin-left:74px;
+	position:relative;
+}
+.picTrail{
+	float:left;
+	margin-top:10px;
+	margin-left:10px;
+	width:103px;
+	height:104px;
+	
+	}
+.item p{
+	clear:left;
+	margin-left:15px;
+	padding-top:5px;
+	
+	}
+.trailInput{
+	width:375px;
+	height:25px;
+	
+	}
+.itemUl{
+	float:right;
+	margin-right:20px;
+	}
+.itemUl li{
+	margin-top:5px;
+}
+.confirmBtn{
+	float:right;
+	margin-top:10px;
+	border:none;
+	background-image:url(../image/confirmBtn.png);
+	width:24px;
+	height:23px;
+	cursor:pointer;
+	}
+.hr{
+	margin-top:20px;
+	width:623px;
+	
+	}
+.addItem,.refresh,.readItem,.delete{
+	width:95px;
+	height:25px;
+	margin-top:10px;
+	}
+.delete{
+	margin-left:330px;
+	}
+.count{
+	width:659px;
+	height:auto;
+	}
+.count span{
+	display:block;
+	}
+.readInput{
+	width:445px;
+	height:25px;
+	
+	}

@@ -1,0 +1,58 @@
+#scent-group .col-main {
+  position: relative;
+}
+#scent-group .col-main .scent-group-title {
+  padding-left: 10px;
+  border-left: 1px solid #AAA;
+  border-right: 1px solid #AAA;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  background: url("http://test.showjoy.com/console/assets/1.0/image/header-footer-bg.png") 0 -100px repeat-x #dddddd;
+}
+#scent-group .col-main .scent-group-title .title-tip {
+  font-size: 12px;
+  color: #999;
+}
+#scent-group .col-main .scent-group-select {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+}
+.scent-group-table {
+  width: 100%;
+  text-align: center;
+}
+.scent-group-table th,
+.scent-group-table td {
+  padding: 10px;
+  vertical-align: middle;
+  border: 1px solid #AAA;
+}
+.scent-group-table th {
+  height: 30px;
+  line-height: 30px;
+  background: #eee;
+  font-size: 14px;
+}
+.scent-group-table .scent-group-mark {
+  display: inline-block;
+  padding: 0 10px;
+  visibility: hidden;
+  font-size: 16px;
+  vertical-align: middle;
+}
+.scent-group-table .scent-group-mark-unsave {
+  visibility: visible;
+  color: #f00;
+}
+.scent-group-table .scent-group-mark-saved {
+  color: #0f0;
+  visibility: visible;
+}
+.scent-group-input {
+  width: 50px;
+  float: left;
+  margin-right: 10px;
+}

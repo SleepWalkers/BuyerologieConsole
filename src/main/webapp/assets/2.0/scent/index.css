@@ -1,0 +1,67 @@
+#scent-index .col-main {
+  position: relative;
+}
+#scent-index .col-main .scent-title {
+  padding-left: 10px;
+  border-left: 1px solid #AAA;
+  border-right: 1px solid #AAA;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  background: url("http://test.shojoy.com/console/assets/1.0/image/header-footer-bg.png") 0 -100px repeat-x #dddddd;
+}
+#scent-index .col-main .scent-total-select {
+  position: absolute;
+  top: 7px;
+  right: 120px;
+}
+#scent-index .col-main .scent-add {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+}
+.scent-table {
+  width: 100%;
+  text-align: center;
+}
+.scent-table th,
+.scent-table td {
+  padding: 5px;
+  border: 1px solid #AAA;
+}
+.scent-table th {
+  height: 30px;
+  line-height: 30px;
+  background: #eee;
+  font-size: 14px;
+}
+.scent-table button {
+  padding: 0 10px;
+}
+.scent-table input {
+  text-align: center;
+}
+.scent-table textarea {
+  width: 400px;
+  height: 50px;
+  resize: none;
+}
+.scent-table .scent-name {
+  width: 60px;
+}
+.scent-table .scent-mark {
+  display: inline-block;
+  padding: 0 10px;
+  visibility: hidden;
+  font-size: 16px;
+  vertical-align: middle;
+}
+.scent-table .scent-mark-unsave {
+  visibility: visible;
+  color: #f00;
+}
+.scent-table .scent-mark-saved {
+  color: #0f0;
+  visibility: visible;
+}

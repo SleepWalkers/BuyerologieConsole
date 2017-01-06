@@ -1,0 +1,18 @@
+.cat-table tr .display {
+  display: inline;
+}
+.cat-table tr .edit {
+  display: none;
+}
+.cat-table tr.edit-status .display {
+  display: none;
+}
+.cat-table tr.edit-status .edit {
+  display: inline;
+}
+.cat-table tr.add {
+  display: none;
+}
+.cat-table tr.add.edit-status {
+  display: table-row;
+}

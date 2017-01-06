@@ -1,0 +1,46 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "尚课"}])
+#set($title = "尚课列表")
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+		<div class="panel panel-default" id="p1">
+			<div class="panel-heading">
+				<h2></h2>
+			</div>
+			<div class="panel-body">
+				<div class=" mt10 mb10">
+					<a href="/course/add" class="btn btn-default">新增</a>
+                </div>
+				<div>
+					<table class="table mb0" cellspacing="0">
+						<thead>
+            				<tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>视频ID</th>
+                                <th>管理</th>
+                            </tr>
+                        </thead>
+						<tbody>
+							#foreach($course in $courses)
+                                <tr data-id="$!{course.id}">
+                                    <td>$!{course.id}</td>
+                                    <td>$!{course.title}</td>
+                                    <td>$!{course.videoId}</td>
+									<td>
+										<a href="/course/edit?id=$!{course.id}"  target="_blank" class="btn btn-default">编辑</a>
+										<a class="btn btn-default mod-ajaxdel" mod-data-api="/api/course/delete" mod-data-params="{id:$!{course.id}}">删除</a>
+									</td>
+                                </tr>
+							#end
+                        </tbody>
+                    </table>
+				</div>
+				<div>
+					#jpager ("/news/list?page=",$!{totalPages},$!{currentPage},"")
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,108 @@
+.col-main .crumbs-nav {
+  padding-left: 10px;
+  border-right: 1px solid #aaaaaa;
+  height: 30px;
+  line-height: 30px;
+  background: url("http://file.showjoy.com/assets/img/console/header-footer-bg.png") 0 -100px repeat-x #dddddd;
+  margin-bottom: 10px;
+}
+.pic-manage {
+  *zoom: 1;
+  float: left;
+  width: 160px;
+  text-align: center;
+}
+.pic-manage:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.pic-manage .pic {
+  margin-bottom: 10px;
+}
+.pic-manage .submit-btn {
+  margin-top: 10px;
+}
+.tag-manage {
+  *zoom: 1;
+  width: auto;
+}
+.tag-manage:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.tag-manage .tag-tree {
+  *zoom: 1;
+  float: left;
+  width: 300px;
+}
+.tag-manage .tag-tree:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.tag-manage .tag-tree .wijmo-wijtree {
+  width: 285px;
+  min-height: 400px;
+  height: auto !important;
+  height: 400px;
+}
+.tag-manage .tag-list {
+  *zoom: 1;
+  float: right;
+  width: 473px;
+  padding-left: 10px;
+}
+.tag-manage .tag-list:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.tag-manage .tag-list li {
+  padding: 5px 10px;
+  border: 1px solid #aaaaaa;
+  margin: 0 10px 10px 0;
+  overflow: hidden;
+  text-align: center;
+}
+.tag-manage .tag-list input,
+.tag-manage .tag-list button {
+  margin: 0 10px;
+  display: inline-block;
+}
+.tag-manage .tag-list button {
+  padding: 0 15px;
+}
+.tag-manage .tag-list .rel-tag {
+  display: inline-block;
+  width: 110px;
+  color: #b10000;
+}
+.tag-manage .tag-list .rel-tag-factor {
+  width: 50px;
+  text-align: center;
+}
+.tag-manage .tag-list .rel-tag-mark {
+  display: inline-block;
+  font-size: 20px;
+  vertical-align: middle;
+  visibility: hidden;
+}
+.tag-manage .tag-list .rel-tag-unsave {
+  color: #f00;
+  visibility: visible;
+}
+.tag-manage .tag-list .rel-tag-saved {
+  color: #0f0;
+  visibility: visible;
+}
+.tag-manage .del-all-tag {
+  position: absolute;
+  top: -40px;
+  right: 10px;
+}

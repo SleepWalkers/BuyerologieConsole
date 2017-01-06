@@ -1,0 +1,121 @@
+// base    moming  2013年02月23日11:05:35
+
+// 全局变量
+@base-assets-url:"http://file.showjoy.com/assets/img/console";
+@base-color:#212121;
+@base-border-color:#aaa;
+
+//  清除浮动
+.clearfix(){
+  *zoom:1;
+}
+
+.clearfix-after(){
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+//  布局类
+.wrap(@width:auto){
+  .clearfix();
+  &:after{
+    .clearfix-after();
+  }
+  width:@width;
+}
+
+.col-left(@width:auto){
+  .clearfix();
+  &:after{
+       .clearfix-after();
+  }
+  float:left;
+  width:@width;
+}
+.col-right(@width:auto){
+   .clearfix();
+  &:after{
+       .clearfix-after();
+  }
+  float:right;
+  width:@width;
+}
+
+.location(@position:absolute,@left:0,@top:0,@z-index:1){
+  position:@position;
+  top:@top;
+  left:@left;
+  z-index:@z-index;
+}
+
+.min-height(@height){
+    min-height: @height;
+    height: auto !important;
+	height: @height;
+}
+
+.min-width(@width){
+  min-width: @width;
+  width: auto !important;
+	width: @width;
+}
+
+
+//  CSS3效果类
+
+.border-radius(@radius:2px){
+  border-radius:@radius;
+  -moz-border-radius:@radius;
+  -webkit-border-radius:@radius;
+}
+
+.box-shadow (@x:1px,@y:1px,@blur:1px,@color:#000) {
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+.text-shadow (@x:1px,@y:1px,@blur:1px,@color:#000) {
+  text-shadow: @arguments;
+  -moz-text-shadow: @arguments;
+  -webkit-text-shadow: @arguments;
+}
+.transform(@args){
+  -moz-transform: @args;
+  -webkit-transform: @args;
+  -o-transform: @args;
+  -ms-transform: @args;
+  transform: @args;
+}
+.transition(@el:all,@duration:.3s,@effect:ease-in-out,@delay:.2s){
+  -webkit-transition: @arguments;
+  -o-transition: @arguments;
+  -moz-transition: @arguments;
+  transition: @arguments;
+}
+
+.linear-gradient(@direction:top,@startColor:#fff,@endColor:#000){
+  background: -moz-linear-gradient(@direction,@startColor,@endColor);
+  background: -webkit-gradient(linear,@direction,from(@startColor),to(@endColor));
+  background: -webkit-linear-gradient(@direction,@startColor,@endColor);
+  background: -o-linear-gradient(@direction,@startColor,@endColor); 
+}
+
+.top-linear-gradient(@startColor:#fff,@endColor:#000){
+  .linear-gradient(top,@startColor,@endColor);
+   filter:"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=@{startColor}, endColorstr=@{endColor})";
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=@{startColor}, endColorstr=@{endColor})";
+}
+
+.ellipsis(){
+  -o-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+

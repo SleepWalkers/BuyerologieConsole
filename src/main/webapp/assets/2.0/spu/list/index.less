@@ -1,0 +1,33 @@
+@import "../../common/dpl.less";
+#spu-list{
+  .search-form{
+    .wrap(auto);
+    padding:10px;
+    li{
+     float:left;
+    }
+    li.search{
+      margin-left: 100px;
+    .search-input{
+      width: 400px;
+    }
+    }
+    li.fr{
+      float: right;
+      .viewall{
+        display: none;
+      }
+    }
+    li.search-status{
+      .wijmo-wijcombobox{
+        display: none;
+      }
+      .viewall{
+        display: block;
+      }
+    }
+  } 
+  .spu-grid{
+     text-align:center;
+  }
+}

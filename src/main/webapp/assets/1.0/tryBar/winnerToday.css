@@ -1,0 +1,60 @@
+#content .contenttodaywinner{
+	width:987px;
+	height:560px;
+	border:thin solid #d1d0d1;
+	overflow:scroll;
+}
+.warningTo2{
+	position: relative;
+    left: 260px;
+}
+.pageTitle{
+	width: 990px;
+	height: 30px;
+	background: #d1d0d1;
+	line-height: 30px;
+	border-bottom-color: #000;
+}
+.winnerForm{
+	margin-left:80px;
+	margin-top:20px;
+}
+.winnerForm ul{
+	list-style:none;
+	}
+
+.choose,.introTodayWinner{
+	height:27px;
+	}
+.warnTodayWinner{
+	color:#F00;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:70px;
+	}
+.inpTWinner{
+	width:237px;
+	height:27px;
+	margin-left:15px;
+	}
+.j_createList,.j_winnerSubmit{
+	width:100px;
+	height:25px;
+	margin-left:470px;
+	}
+.j_winnerSubmit{
+	margin-top:20px;
+	}
+.j_winnerTable{
+    border:thin double #d1d0d1;
+	text-align:center;
+	margin-top:20px;
+	margin-left:6px;
+	}
+.sizeController{
+	width:108px;
+	height:25px;
+	}
+.sizeController2{
+	width:150px;
+	}

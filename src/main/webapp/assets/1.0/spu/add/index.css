@@ -1,0 +1,77 @@
+#spu-detail .crumbs-nav {
+  padding-left: 10px;
+  border-right: 1px solid #aaaaaa;
+  height: 30px;
+  line-height: 30px;
+  background: url("http://file.showjoy.com/assets/img/console/header-footer-bg.png") 0 -100px repeat-x #dddddd;
+}
+#spu-detail .spu-ctn {
+  *zoom: 1;
+  width: auto;
+}
+#spu-detail .spu-ctn:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-tab {
+  *zoom: 1;
+  float: right;
+  width: 982px;
+  min-height: 527px;
+  height: auto !important;
+  height: 527px;
+}
+.spu-tab:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-tab .info-search-help {
+  padding-bottom: 12px;
+}
+.spu-tab .info-search-help button {
+  margin: 0 10px;
+}
+.spu-base .spu-base-form {
+  *zoom: 1;
+  width: 780px;
+}
+.spu-base .spu-base-form:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-base .spu-base-form li {
+  position: relative;
+  float: left;
+  width: 370px;
+  padding-left: 20px;
+  margin: 10px 0;
+  height: 30px;
+}
+.spu-base .spu-base-form li label {
+  display: inline-block;
+  width: 60px;
+  line-height: 30px;
+}
+.spu-base .spu-base-form li .spu-base-require {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 20px;
+  text-align: center;
+  line-height: 30px;
+  color: #f00;
+}
+.spu-base .spu-base-form li .wijmo-wijradio {
+  display: inline-block;
+}
+.spu-base .spu-base-action {
+  margin-top: 30px;
+  text-align: center;
+}

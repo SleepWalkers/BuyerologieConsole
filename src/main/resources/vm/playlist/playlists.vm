@@ -1,0 +1,45 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "保利威视"}])
+#set($title = "保利威视-播放列表")
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+		<div class="panel panel-default" id="p1">
+			<div class="panel-heading">
+				<h2></h2>
+			</div>
+			<div class="panel-body">
+                #if("#checkRole($!{gv_user.auth},'ROLE_VIDEO_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+				<form class="form-horizontal mod-ajaxform"  method="POST" action="/api/course/sync" data-refresh="true">
+					<input type="hidden" name="redirectUrl" value="/play/list"/>
+	                <div class="form-group">
+    			 	 	<div class="col-sm-offset-2 col-sm-10">
+    	    				<button type="submit" class="btn btn-primary">同步保利威视视频</button>
+    	    			</div>
+					</div>
+				</form>
+				#end
+				<div>
+					<table class="table mb0" cellspacing="0">
+						<thead>
+            				<tr>
+                                <th>视频标题</th>
+                                <th>视频ID</th>
+                                <th>视频时长</th
+                            </tr>
+                        </thead>
+						<tbody>
+								#foreach($video in $!{videos})
+                                <tr>
+                                    <td>$!{video.title}</td>
+                                    <td>$!{video.id}</td>
+                                    <td>$date.format("HH:mm:ss",$!{video.duration})</td>
+                                </tr>
+								#end
+                        </tbody>
+                    </table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

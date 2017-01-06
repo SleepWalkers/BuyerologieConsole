@@ -1,0 +1,24 @@
+.cat-table{
+  tr{
+    .display{
+      display: inline;
+    }
+    .edit{
+      display: none;
+    }
+  }
+  tr.edit-status{
+    .display{
+      display: none;
+    }
+    .edit{
+      display: inline;
+    }
+  }
+  tr.add{
+    display: none;
+  }
+  tr.add.edit-status{
+    display: table-row;
+  }
+}

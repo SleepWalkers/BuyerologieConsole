@@ -1,0 +1,182 @@
+##时间戳
+#macro(updateVersion )
+#set($vTmp = "20120416")$vTmp#end
+
+##文本长度控制,由于是字符串
+	##str 需要长度控制的字符串
+	##maxLength 截取的最大长度
+	##subfix 后缀
+#macro(previewText $str,$maxLength,$subfix)
+	#if(!$!{str}||!$!{maxLength}||!$!{subfix})
+		##是空则不执行
+	#else
+    	#if(${str.length()}>${maxLength})
+    		$!{str.substring(0,${maxLength})}$!{subfix}
+    	#else
+    		$!{str}
+		#end
+	#end
+#end
+
+##分页控制器 
+	##ex:pageRedirctUrl:$pageRedirctUrl="itemLoveList.do?category=$!{category}&currPageIndex="
+	##pageCount 总页数
+	##currPageIndex 当前页
+#macro(pager $pageRedirctUrl,$pageCount,$currPageIndex,$urlEnd)
+		#set($nextPage=$!currPageIndex+1)
+		#if($!currPageIndex==$!pageCount)
+			#set($nextPage=$!pageCount)
+		#end
+		#set($prePage=$!currPageIndex+(-1))
+		#if($!currPageIndex==1)
+			#set($prePage=1)
+		#end
+		#set($firstPage=$pageRedirctUrl+1+$urlEnd)
+		#set($lastPage=$pageRedirctUrl+$pageCount+$urlEnd)
+		#set($prePage=$pageRedirctUrl+$prePage+$urlEnd)
+		#set($nextPage=$pageRedirctUrl+$nextPage+$urlEnd)
+			
+<!--当前页数所属分组0-5 5-10类推为一组-->	
+#set($pageGroup=$!{pageCount}/5)
+#if($!{pageCount}%5>0)
+	#set($pageGroup=$pageGroup+1)
+#end
+#set($CurrentGroup=1)
+#foreach($groupid in [1..$!{pageGroup}])
+	#set($gEnd=$groupid*5)
+	#set($gStart=$gEnd+(-5))
+	#if($gStart<=$!currPageIndex && $!currPageIndex<=$gEnd)
+	#set($CurrentGroup=$groupid)
+	#end
+#end
+#set($preGroup=$CurrentGroup+(-1))
+#if($CurrentGroup==1)
+	#set($preGroup=$CurrentGroup+(-1))
+#end	
+#set($nextGroup=$CurrentGroup+1)
+#if($CurrentGroup==$pageGroup)
+	#set($nextGroup=$CurrentGroup)
+#end
+
+#if($pageCount>1)
+    <div class="wijmo-wijgrid-footer wijmo-wijsuperpanel-footer ui-state-default ui-corner-bottom ui-widget wijmo-wijpager ui-helper-clearfix">
+		<ul class="ui-list ui-corner-all ui-widget-content ui-helper-clearfix">
+    #if($!{currPageIndex}>1)<li class="wijmo-wijpager-button ui-corner-all ui-state-default"><a  href="$!{firstPage}" title="首页"><span>首页</span></a></li> <li class="wijmo-wijpager-button ui-corner-all ui-state-default"><a href="$!{prePage}" title="上一页"><span>上一页</span></a></li> #end
+    #if($CurrentGroup>1)<li class="wijmo-wijpager-button ui-corner-all ui-state-default"><span class="ellipsis">...</span></li>#end
+    #if($!{pageCount}>0)
+        #foreach($id in [1..$!{pageCount}])
+            #if($!id==$!currPageIndex)
+            <li class="wijmo-wijpager-button ui-corner-all ui-state-active"><span>$!{id}</span></li> 
+            #else
+        		#if(($preGroup*5)<=$!id && $!id<=($CurrentGroup*5))
+			<li class="wijmo-wijpager-button ui-corner-all ui-state-default">
+				<a href="$!{pageRedirctUrl}$!{id}$!{urlEnd}" title="$!{id}" ><span>$!{id}</span></a>
+			</li>
+        		#end
+            #end
+        #end
+    #end
+    #if($CurrentGroup<$pageGroup)<li class="wijmo-wijpager-button ui-corner-all ui-state-default"><span class="ellipsis">...</span></li>#end
+    #if($pageCount>$currPageIndex)
+    	#if($!{pageCount}>1)<li class="wijmo-wijpager-button ui-corner-all ui-state-default"><a href="$!{nextPage}" title="下一页"><span>下一页</span></a></li>#end
+	#end
+	#if($!{currPageIndex}<$!{pageCount})<li class="wijmo-wijpager-button ui-corner-all ui-state-default"><a  href="$!{lastPage}" title="末页"><span>末页</span></a></li> #end
+	</ul>
+    </div>
+#end
+#end
+
+##double类型小数点控制到后两位
+	##num 需要格式化的double数值
+#macro(numFormat $num)#if(!$!{num})#else#set($numFloat=${num.floatValue()})#set($numFloatStr=${numFloat.toString()})#set($index=${numFloatStr.indexOf('.')})#if($index==-1)${numFloatStr}.00#else#set($numLength=${numFloatStr.length()})#set($numLength=${numLength}-${index})#if($numLength>2)#set($numLength=${numFloatStr.length()}-${numLength}+3)$!{numFloatStr.substring(0,$numLength)}#else$!{numFloatStr}0#end#end#end#end
+
+							
+							
+	##检查用户的权限
+	##UserRoleStr用户权限
+	##role 用户所拥有的权限
+#macro(checkRole $userRoleStr,$role)#set($userRoleArr = $!{userRoleStr.toString().split(",")})#foreach($userRole in $!userRoleArr)#if($!{role.trim()} == $!{userRole.trim()})true#end#end#end
+
+##分页控制器 
+	##ex:pageRedirctUrl:$pageRedirctUrl="itemLoveList.do?category=$!{category}&currPageIndex="
+	##pageCount 总页数
+	##currPageIndex 当前页
+#macro(jpager $pageRedirctUrl,$pageCount,$currPageIndex,$urlEnd)
+		#set($nextPage=$!currPageIndex+1)
+		#if($!currPageIndex==$!pageCount)
+			#set($nextPage=$!pageCount)
+		#end
+		#set($prePage=$!currPageIndex+(-1))
+		#if($!currPageIndex==1)
+			#set($prePage=1)
+		#end
+		#set($firstPage=$pageRedirctUrl+1+$urlEnd)
+		#set($lastPage=$pageRedirctUrl+$pageCount+$urlEnd)
+		#set($prePage=$pageRedirctUrl+$prePage+$urlEnd)
+		#set($nextPage=$pageRedirctUrl+$nextPage+$urlEnd)
+			
+<!--当前页数所属分组0-5 5-10类推为一组-->	
+#set($pageGroup=$!{pageCount}/5)
+#if($!{pageCount}%5>0)
+	#set($pageGroup=$pageGroup+1)
+#end
+#set($CurrentGroup=1)
+#foreach($groupid in [1..$!{pageGroup}])
+	#set($gEnd=$groupid*5)
+	#set($gStart=$gEnd+(-5))
+	#if($gStart<=$!currPageIndex && $!currPageIndex<=$gEnd)
+	#set($CurrentGroup=$groupid)
+	#end
+#end
+#set($preGroup=$CurrentGroup+(-1))
+#if($CurrentGroup==1)
+	#set($preGroup=$CurrentGroup+(-1))
+#end	
+#set($nextGroup=$CurrentGroup+1)
+#if($CurrentGroup==$pageGroup)
+	#set($nextGroup=$CurrentGroup)
+#end
+
+#if($pageCount>1)
+    <div>
+		<ul class="pagination pagination-sm pull-right">
+        #if($!{currPageIndex}>1)
+			<li><a href="$!{firstPage}" title="首页"><span>首页</span></a></li> 
+			<li><a href="$!{prePage}" title="上一页"><span>上一页</span></a></li>
+		#else
+			<li class="disabled"><span>首页</span></li>
+			<li class="disabled"><span>上一页</span></li>
+		#end
+        #if($CurrentGroup>1)
+			<li><span class="ellipsis">...</span></li>
+		#end
+        #if($!{pageCount}>0)
+            #foreach($id in [1..$!{pageCount}])
+                #if($!id==$!currPageIndex)
+                <li class="active"><span>$!{id}</span></li> 
+                #else
+            		#if(($preGroup*5)<=$!id && $!id<=($CurrentGroup*5))
+    			<li>
+    				<a href="$!{pageRedirctUrl}$!{id}$!{urlEnd}" title="$!{id}" ><span>$!{id}</span></a>
+    			</li>
+            		#end
+                #end
+            #end
+        #end
+        #if($CurrentGroup<$pageGroup)<li><span class="ellipsis">...</span></li>#end
+        #if($pageCount>$currPageIndex)
+        	#if($!{pageCount}>1)
+				<li><a href="$!{nextPage}" title="下一页"><span>下一页</span></a></li>
+			#end
+		#else
+			<li class="disabled"><span>下一页</span></li>
+    	#end
+    	#if($!{currPageIndex}<$!{pageCount})
+			<li><a  href="$!{lastPage}" title="末页"><span>末页</span></a></li>
+		#else
+			<li class="disabled"><span>末页</span></li>
+		#end
+    	</ul>
+    </div>
+#end
+#end

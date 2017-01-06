@@ -1,0 +1,64 @@
+## <!-- 头部菜单栏 -->
+<header id="topnav" class="navbar navbar-inverse navbar-fixed-top clearfix" role="banner">
+	## <!-- 左部伸缩菜单按钮 -->
+	<a id="leftmenu-trigger" class="" data-toggle="tooltip" data-placement="right" title="Toggle Sidebar"></a>
+	## <!-- 头部商标 -->
+	## <!-- 右边伸缩菜单 -->
+	<a id="rightmenu-trigger" class="" data-toggle="tooltip" data-placement="left" title="Toggle Infobar"></a>
+	## <!-- 菜单栏用户信息 -->
+	<ul class="nav navbar-nav toolbar pull-right">
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle username" data-toggle="dropdown">
+				<span class="hidden-xs">$!gv_user.username</span>
+				<img class="img-circle" src="$!{gv_user.image}" alt="Dangerfield" />
+
+			</a>
+			## <!-- 用户信息的下拉菜单 -->
+			<ul class="dropdown-menu userinfo">
+				<li>
+					<a href="#">
+						<span class="pull-left">信息修改</span> <i class="pull-right fa fa-pencil"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="pull-left">账户设置</span> <i class="pull-right fa fa-cogs"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="pull-left">帮助</span>
+						<i class="pull-right fa fa-question-circle"></i>
+					</a>
+				</li>
+				## <!-- 中间滑动条 -->
+				<li class="divider"></li>
+				<li>
+					<a href="#">
+						<span class="pull-left">收入</span>
+						<i class="pull-right fa fa-money"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="pull-left">报表</span>
+						<i class="pull-right fa fa-file-o"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="pull-left">提款</span>
+						<i class="pull-right fa fa-credit-card"></i>
+					</a>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<a href="/api/user/logout?service=$!{service}&redirectUri=$!{redirectURL}"  class="user-logout">
+						<span class="pull-left">退出</span>
+						<i class="pull-right fa fa-sign-out"></i>
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</header>

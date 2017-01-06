@@ -1,0 +1,63 @@
+
+.contentwinnerlist{
+  
+	
+}
+
+.pageTitle {
+width: 990px;
+height: 30px;
+background: #d1d0d1;
+line-height: 30px;
+border-bottom-color: #000;
+}
+.preDate,.afterDate{
+	
+	width:85px;
+	height:25px;
+	}
+.winnerBtn{
+	width:85px;
+	height:28px;
+	margin-left:10px;
+	}
+.winnerForm{
+	margin-top:20px;
+	margin-left:20px;
+	}
+.winnerForm table{
+	margin-top:20px;
+	}
+.data{
+	width:945px;
+	
+	}
+.data a{
+	margin-left:10px;
+	}
+.winnerToday{
+	float:right;
+	}
+.winTabFirstTr{
+	text-align:center;
+	}
+
+.td input{
+	height:40px;
+	width:140px;	
+	}
+.record{
+	margin-left:750px;
+	margin-top:10px;
+	}
+.record ul li{
+	display:inline;
+	float:left;
+	padding-left:2px;
+	}
+.record span{
+	float:left;
+	}
+.winTabFirstTr{
+	border:thin medium 1px;
+	}

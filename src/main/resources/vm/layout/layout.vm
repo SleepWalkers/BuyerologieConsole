@@ -1,0 +1,63 @@
+###parse('layout/header.vm')  
+##<body style="background:url(images/header_bg.png) repeat-x;">  
+##  <div id="wrapper">  
+##       $screen_content  
+##        #parse('layout/footer.vm')  
+##    </div>  
+##</body>  
+##</html> 
+##$screen_content
+#if($!{isEmptyPage})
+	$screen_content
+#elseif($!{isBootstrap})
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	#parse("common2/head.vm")
+</head>
+<body class="breadcrumb-top">
+	#parse("common2/header.vm")
+	<div id="wrapper">
+		<div id="layout-static">
+			#parse("common2/leftmenu.vm")
+			<div class="static-content-wrapper">
+				<div class="page-content">
+					#parse("common2/breadcrumb.vm")
+					#if($!{title})
+					<div class="page-heading">
+						<h1>$!{title}</h1>
+					</div>
+					#else
+					<div class="mt20"></div>
+					#end
+					<div class="container-fluid">
+						$screen_content
+					</div>
+				</div>
+				#parse("common2/footer.vm")
+			</div>
+		</div>
+	</div>
+</body>
+#parse("common2/end.vm")
+</html>
+#else
+<!DOCTYPE HTML>
+<html>
+     <head>
+        #parse("common/head.vm")
+    </head>
+<body>  
+	 <div id="page">
+		#parse("common/header.vm")
+		<div id="wrapper">  
+			<div id="content">
+			$screen_content  
+            </div>
+			#parse('common/footer.vm')  
+		</div>
+	 </div>
+</body>  
+</html> 
+#end
+

@@ -1,0 +1,47 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "资讯"}])
+#set($title = "资讯列表")
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+		<div class="panel panel-default" id="p1">
+			<div class="panel-heading">
+				<h2></h2>
+			</div>
+			<div class="panel-body">
+				<div class=" mt10 mb10">
+					<a href="/news/add" class="btn btn-default">新增</a>
+                </div>
+				<div>
+					<table class="table mb0" cellspacing="0">
+						<thead>
+            				<tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>列表图片必须数量（实际数量）</th>
+                                <th>管理</th>
+                            </tr>
+                        </thead>
+						<tbody>
+							#foreach($news in $newses)
+                                <tr data-id="$!{news.id}">
+                                    <td>$!{news.id}</td>
+                                    <td>$!{news.title}</td>
+                                    <td>#if($math.mod($velocityCount,3)==1)1#{else}2#end（$!{news.images.size()}）</td>
+									<td>
+										<a href="/news/edit?id=$!{news.id}"  target="_blank" class="btn btn-default">编辑</a>
+										<a href="/news/image/edit?id=$!{news.id}"  target="_blank" class="btn btn-default">编辑图片</a>
+										<a class="btn btn-default mod-ajaxdel" data-refresh="true" mod-data-api="/api/news/delete" mod-data-params="{id:$!{news.id}}">删除</a>
+                                    </td>
+                                </tr>
+							#end
+                        </tbody>
+                    </table>
+				</div>
+				<div>
+					#jpager ("/news/list?page=",$!{totalPages},$!{currentPage},"")
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,460 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px/1.5 tahoma, arial;
+  *line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: courier new, courier, monospace;
+}
+small {
+  font-size: 12px;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+legend {
+  color: #000;
+}
+fieldset,
+img {
+  border: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+}
+.mod-table {
+  width: 100%;
+}
+.mod-table th {
+  height: 30px;
+  line-height: 30px;
+  background-color:#e6e6e6;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #AAA;
+  padding: 5px;
+}
+.mod-table td {
+  padding: 5px;
+  vertical-align: middle;
+  border: 1px solid #AAA;
+  text-align: center;
+}
+.mod-table tr.mod-table-hd {
+  background-color: #e6e6e6;
+}
+.mod-grid {
+  width: 100%;
+  overflow: hidden;
+}
+.mod-grid .mod-grid-col-10,
+.mod-grid .mod-grid-col-20,
+.mod-grid .mod-grid-col-30,
+.mod-grid .mod-grid-col-40,
+.mod-grid .mod-grid-col-50,
+.mod-grid .mod-grid-col-60,
+.mod-grid .mod-grid-col-70,
+.mod-grid .mod-grid-col-80,
+.mod-grid .mod-grid-col-90,
+.mod-grid .mod-grid-col-100 {
+  float: left;
+  text-align: left;
+}
+.mod-grid .mod-grid-col-10 {
+  width: 10%;
+}
+.mod-grid .mod-grid-col-20 {
+  width: 20%;
+}
+.mod-grid .mod-grid-col-30 {
+  width: 30%;
+}
+.mod-grid .mod-grid-col-40 {
+  width: 40%;
+}
+.mod-grid .mod-grid-col-50 {
+  width: 50%;
+}
+.mod-grid .mod-grid-col-60 {
+  width: 60%;
+}
+.mod-grid .mod-grid-col-70 {
+  width: 70%;
+}
+.mod-grid .mod-grid-col-80 {
+  width: 80%;
+}
+.mod-grid .mod-grid-col-90 {
+  width: 90%;
+}
+.mod-grid .mod-grid-col-100 {
+  width: 100%;
+}
+.mod-grid .mod-grid-col-tl {
+  text-align: left;
+}
+.mod-grid .mod-grid-col-tc {
+  text-align: center;
+}
+.mod-grid .mod-grid-col-tr {
+  text-align: right;
+}
+.mod-row {
+  width: 100%;
+  overflow: hidden;
+  margin: 10px 0;
+}
+.mod-box {
+  margin: 10px auto;
+  padding: 0 10px;
+}
+.mod-ajaxform {
+  width: 100%;
+  overflow: hidden;
+}
+.mod-ajaxform .mod-ajaxform-legend {
+  background-color: #ccc;
+  width: 100%;
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.mod-ajaxform .mod-ajaxform-legend .mod-ajaxform-legend-title {
+  float: left;
+  padding-left: 10px;
+}
+.mod-ajaxform .mod-ajaxform-legend .mod-ajaxform-legend-action {
+  float: right;
+  padding-right: 10px;
+}
+.mod-ajaxform .mod-ajaxform-field {
+  margin: 10px 0;
+  height: 30px;
+}
+.mod-ajaxform .mod-ajaxform-field .mod-ajaxform-field-label {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+}
+.mod-ajaxform .mod-ajaxform-field label.mod-ajaxform-field-label-em1 {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  width: 1em;
+}
+.mod-ajaxform .mod-ajaxform-field label.mod-ajaxform-field-label-em2 {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  width: 2em;
+}
+.mod-ajaxform .mod-ajaxform-field label.mod-ajaxform-field-label-em3 {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  width: 3em;
+}
+.mod-ajaxform .mod-ajaxform-field label.mod-ajaxform-field-label-em4 {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  width: 4em;
+}
+.mod-ajaxform .mod-ajaxform-field label.mod-ajaxform-field-label-em5 {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  width: 5em;
+}
+.mod-ajaxform .mod-ajaxform-field label.mod-ajaxform-field-label-em6 {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  width: 6em;
+}
+.mod-ajaxform .mod-ajaxform-field label.mod-ajaxform-field-label-em7 {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  width: 8em;
+}
+.mod-ajaxform .mod-ajaxform-field label.mod-ajaxform-field-label-em8 {
+  display: inline-block;
+  line-height: 30px;
+  text-align: right;
+  width: 8em;
+}
+.mod-ajaxform .mod-ajaxform-field .mod-ajaxform-require {
+  line-height: 30px;
+  color: #f00;
+}
+.mod-ajaxform .mod-ajaxform-field .mod-ajaxform-error {
+  color: #f00;
+}
+.mod-viewbox {
+  width: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+}
+.mod-viewbox .mod-viewbox-hd {
+  background-color: #ccc;
+  width: 100%;
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.mod-viewbox .mod-viewbox-hd .mod-viewbox-hd-title {
+  float: left;
+  padding-left: 10px;
+}
+.mod-viewbox .mod-viewbox-hd .mod-viewbox-hd-other {
+  float: right;
+  padding-right: 10px;
+}
+.mod-viewbox .mod-viewbox-bd {
+  padding: 10px;
+  max-height: auto;
+  overflow-y: auto;
+}
+.mod-rte {
+  width: 100%;
+  height: 300px;
+}
+.mod-tab .mod-tab-nav {
+  overflow: hidden;
+  margin: 0;
+  padding: .2em .2em 0;
+  border-bottom: 1px solid #d3d3d3;
+}
+.mod-tab .mod-tab-nav li {
+  float: left;
+  position: relative;
+  top: 0;
+  border: 1px solid #d3d3d3;
+  margin: 1px .2em 0 0;
+  border-bottom-width: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.mod-tab .mod-tab-nav li a {
+  float: left;
+  padding: .5em 1em;
+  color: #555;
+  background-color: #e6e6e6;
+}
+.mod-tab .mod-tab-nav li.mod-tab-active {
+  margin-bottom: -1px;
+  padding-bottom: 1px;
+}
+.mod-tab .mod-tab-nav li.mod-tab-active a {
+  color: #212121;
+  background-color: #fff;
+}
+.mod-status-highlight {
+  color: red;
+}
+.mod-status-lowlight {
+  color: #999;
+}
+.mod-status-ok {
+  color: green;
+}
+.mod-status-error {
+  color: red;
+}
+.wijmo-wijradio {
+  display: inline-block;
+  vertical-align: middle;
+}
+.wijmo-checkbox {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+/*select{
+  -webkit-appearance: none;
+  height: 24px;
+  background: #fafafa;
+  padding: 0 30px 0 5px;
+  line-height: 20px;
+  vertical-align: middle;
+  border-radius: 2px;
+  border-color: #d3d3d3;
+  color: #212121;
+  background-image: url("@{base-assets-url}/select-right.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+}*/
+#page {
+  padding-bottom: 100px;
+  color: #212121;
+}
+#page a {
+  color: #212121;
+}
+#header,
+#footer {
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  background: url("http://file.showjoy.com/assets/img/console/header-footer-bg.png") 0 -100px repeat-x #dddddd;
+}
+#header {
+  position: relative;
+  height: 85px;
+  line-height: 85px;
+}
+#header .console-title {
+  font-size: 30px;
+  color: #555;
+}
+#header .login-info {
+  height: 22px;
+  line-height: 22px;
+  font-size: 14px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+#header .login-info .user-name {
+  color: #02661e;
+}
+#header .login-info .user-login,
+#header .login-info .user-logout {
+  color: #6B5618;
+}
+#footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 50px;
+  line-height: 50px;
+}
+#footer a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #666;
+}
+#content {
+  background: url("http://file.showjoy.com/assets/img/console/content-bg.png") top center repeat-x #ffffff;
+}
+#content .layout {
+  *zoom: 1;
+  width: 1190px;
+  margin: auto;
+}
+#content .layout:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+#content .col-sub {
+  *zoom: 1;
+  float: left;
+  width: 200px;
+}
+#content .col-sub:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+#content .col-sub .wijmo-wijtree {
+  width: 185px;
+  min-height: 550px;
+  height: auto !important;
+  height: 550px;
+  border-top: none;
+}
+#content .col-main {
+  *zoom: 1;
+  float: right;
+  width: 990px;
+}
+#content .col-main:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+#crumb {
+  padding-left: 10px;
+  border-right: 1px solid #aaaaaa;
+  height: 30px;
+  line-height: 30px;
+  background: url("http://file.showjoy.com/assets/img/console/header-footer-bg.png") 0 -100px repeat-x #dddddd;
+}

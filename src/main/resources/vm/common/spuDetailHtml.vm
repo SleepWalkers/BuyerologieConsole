@@ -1,0 +1,176 @@
+<div class="intro-block">
+		<div class="block-hd">产品简介<span class="entitle">Product Introduction</span></div>
+		<div class="block-bd">
+            <pre class="desc">
+				$!{spu.introduction}
+			</pre>
+		</div>
+	</div>
+#if($!{spu.cate.id}==2)
+	<div class="note-block">
+		<div class="block-hd">香调介绍<span class="entitle">Note Introduction</span></div>
+		<div class="block-bd">
+            <div class="note-tabs" id="J_NoteTabs">
+                <div class="tabs-hd">
+					<div class="title">香调</div>
+                    <ul class="tabs-nav-list">
+                        <li><a href="#ntabs-top">前调</a></li>
+                        <li><a href="#ntabs-middle">中调</a></li>
+						<li><a href="#ntabs-base">后调</a></li>
+                    </ul>
+                </div>
+				<div id="ntabs-top" class="tabs-bd">
+					<div class="title">相关气味</div>
+                    <div class="scent-tabs j_ScentTabs">
+						<ul class="tabs-nav-list">
+							#set ($scentList =$!{spu.propertyMap.get("前调")})
+							#set ($count =1)
+							#foreach($param in $!{scentList}) 
+                            <li><a href="#stabs-$!count"><img src="$!{param.valueMap.get('图片')}.120x120.png" /><div class="mask"></div></a></li>
+							#set ($count =$count+1)
+							#end
+                           
+                        </ul>
+						#set ($scentList =$!{spu.propertyMap.get("前调")})
+						#set ($count =1)
+						#foreach($param in $!{scentList}) 
+						<div id="stabs-$!count">
+							<a href="" target="_blank" class="name">$!{param.valueMap.get("名字")}</a> $!{param.valueMap.get('描述')}
+						</div>
+						#set ($count =$count+1)
+						#end
+					</div>
+                </div>
+				<div id="ntabs-middle" class="tabs-bd" style="display:none">
+					<div class="title">相关气味</div>
+                    <div class="scent-tabs j_ScentTabs">
+						<ul class="tabs-nav-list">
+							#set ($scentList =$!{spu.propertyMap.get("中调")})
+							#set ($count =1)
+							#foreach($param in $!{scentList}) 
+                            <li><a href="#stabs-$!count"><img src="$!{param.valueMap.get('图片')}.120x120.png" /><div class="mask"></div></a></li>
+							#set ($count =$count+1)
+							#end
+                           
+                        </ul>
+						#set ($scentList =$!{spu.propertyMap.get("中调")})
+						#set ($count =1)
+						#foreach($param in $!{scentList}) 
+						<div id="stabs-$!count">
+							<a href="" target="_blank" class="name">$!{param.valueMap.get("名字")}</a> $!{param.valueMap.get('描述')}
+						</div>
+						#set ($count =$count+1)
+						#end
+					</div>
+                </div>
+				<div id="ntabs-base" class="tabs-bd" style="display:none">
+					<div class="title">相关气味</div>
+                    <div class="scent-tabs j_ScentTabs">
+						<ul class="tabs-nav-list">
+							#set ($scentList =$!{spu.propertyMap.get("后调")})
+							#set ($count =1)
+							#foreach($param in $!{scentList}) 
+                            <li><a href="#stabs-$!count"><img src="$!{param.valueMap.get('图片')}.120x120.png" /><div class="mask"></div></a></li>
+							#set ($count =$count+1)
+							#end
+                           
+                        </ul>
+						#set ($scentList =$!{spu.propertyMap.get("后调")})
+						#set ($count =1)
+						#foreach($param in $!{scentList}) 
+						<div id="stabs-$!count">
+							<a href="" target="_blank" class="name">$!{param.valueMap.get("名字")}</a> $!{param.valueMap.get('描述')}
+						</div>
+						#set ($count =$count+1)
+						#end
+					</div>
+                </div>
+			</div>
+		</div>
+	</div>
+   #end
+		<div class="package-block">
+		<div class="block-hd">产品展示<span class="entitle">Package Showcase</span></div>
+		<div class="block-bd">
+			<p class="pic">
+				#foreach($image in $!{images})
+					
+				     <img src="$!{image.imagePath}.640x640.png" />
+					
+				#end
+			</p>
+		</div>
+	</div>
+#if($!commentList)
+	<div class="review-block">
+		<div class="block-hd">用户评价<span class="entitle">User Reviews</span></div>
+		<div class="block-bd">
+			<ul class="review-list">
+			  #foreach($comment in $!commentList)
+				<li class="review">
+            	    <div class="user">
+						<a>
+							<img width="70" height="70"  src="$!{comment.creatorImage}.70x70.png" alt="$!{comment.creatorImage}">
+						</a>
+						<div class="name">$!{comment.creatorName}</div>
+						
+					</div>
+					<div class="detail">
+                	    <div class="content">
+        					<a>
+								#set($str=$!{comment.previewText}) 
+            
+            						 	#if($!{str.length()}>=130)
+            								 #set($str1=${str.substring(0,130)})	
+                                             $!{str1}...
+            							#else
+											$!str
+            							#end
+								
+							</a>
+                        </div>
+                		<div class="other">
+                			$!{comment.createTime} | <a >全文</a>
+                		</div>
+					</div>
+                </li>
+			  #end	
+			</ul>
+			<p class="more"><a href="javascript:;" id="J_MoreReview">更多评价</a></p>
+		</div>
+	</div>
+#end
+	<div class="brand-block">
+		<div class="block-hd">品牌故事<span class="entitle">Brand Legend</span></div>
+		<div class="block-bd">
+			<pre class="desc">
+				$!{spu.brand.description}
+				<a href="/$!{spu.brand.pathName}.html" target="_blank" class="viewall">查看全部</a>
+			</pre>
+		</div>
+	</div>
+	<div class="auth-block">
+		<div class="block-hd">正品保证<span class="entitle">Geniune Authentication</span></div>
+		<div class="block-bd">
+			<p class="desc">尚妆网坚持从品牌厂商、代理商、专柜等正规渠道采购商品，并与之签订战略正品采购协议，确保所售商品均为100%正品。</p>
+			<p class="pic"><img src="http://file.showjoy.com/assets/img/4.0/spu/certification.jpg" /></p> 
+		</div>
+	</div>
+	<div class="delivery-block">
+		<div class="block-hd">物流说明<span class="entitle">Delivery Policy</span></div>
+		<div class="block-bd">
+			<p class="desc">尚妆在全国若干城市都有货品库存，完善的订单流通方案，先进的仓库管理系统，全自动化的管理方式，确保商品尽可能快地送达您手中。</p>
+			<p class="pic"><img src="http://file.showjoy.com/assets/img/4.0/spu/stock.jpg" /></p> 
+		</div>
+	</div>
+	<div class="policy-block">
+		<div class="block-hd">客户权益<span class="entitle">Customer Policy</span></div>
+		<div class="block-bd">
+			<p class="desc">凭借独一无二的专注和前所未有的服务，为您打造最值得信赖的购买体验。</p>
+			<ul class="policy-list">
+				<li><i class="icon-try"></i><span class="text">尚妆提供完全免费的试用装，让您享受购买之前的美好体验</span></li>
+				<li><i class="icon-freepost"></i><span class="text">全国邮费0.8元，让邮费回到20年前</span></li>
+				<li><i class="icon-45"></i><span class="text">45天无条件退换货，让您的购买无后顾之忧</span></li>
+			</ul>
+		</div>
+	</div>

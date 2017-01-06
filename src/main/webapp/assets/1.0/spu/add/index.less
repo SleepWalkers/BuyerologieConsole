@@ -1,0 +1,61 @@
+@import "../../common/dpl.less";
+#spu-detail{
+   .crumbs-nav{
+       padding-left:10px;
+       border-right:1px solid @base-border-color;
+       height:30px;
+       line-height:30px;
+       background:url("@{base-assets-url}/header-footer-bg.png") 0 -100px repeat-x #ddd;
+   }
+   .spu-ctn{
+       .wrap(auto);
+   }
+}
+
+.spu-tab{
+  .col-right(982px);
+  .min-height(527px);
+  .info-search-help{
+     padding-bottom:12px;
+     button{
+        margin:0 10px;
+     }
+  }
+}
+
+
+.spu-base{
+  .spu-base-form{
+    .wrap(780px);
+    li{
+      position:relative;
+      float:left;
+      width:370px;
+      padding-left:20px;
+      margin:10px 0; 
+      height:30px; 
+      label{
+        display:inline-block;
+        width:60px;
+        line-height:30px;
+      }
+      .spu-base-require{
+	      position:absolute;
+	      top:0;
+	      left:0;
+	      display:block;
+	      width:20px;
+	      text-align:center;
+	      line-height:30px;
+	      color:#f00;
+      }
+      .wijmo-wijradio{
+         display:inline-block;
+      }
+    }
+  }
+  .spu-base-action{
+      margin-top:30px;
+      text-align:center;
+  }
+}

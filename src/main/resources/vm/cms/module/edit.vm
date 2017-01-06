@@ -1,0 +1,37 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "CMS-CMS"}])
+#set($title = "核心页面 > #if(!$!{module})新增#{else}修改#end模块")
+
+
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2>$!{page.pageName}</h2>
+				</div>
+				<div class="panel-body">
+		            <form class="form-horizontal mod-ajaxform" action="/api/cms/module/type/#if(!$!{module})add#{else}edit#end" method="POST">
+						<input type="hidden" name="pageId" value="$!{pageId}"/>
+						<input type="hidden" name="redirectUrl" value="/cms/module/list?pageId=$!{pageId}"/>
+						#if($!{module})
+							<input type="hidden" name="moduleId" value="$!{module.id}"/>
+						#end
+		                
+		                 <div class="form-group">
+	                        <label class="col-xs-2 control-label" for="name">
+	                        		模块中文名：
+                        		</label>
+                        		<div class="col-xs-4">
+                   				<input type="text" class="form-control" name="moduleName" value="$!{module.moduleName}" required>
+                         	</div>
+                     	</div>
+		                <div class="form-group">
+					 	 	<div class="col-sm-offset-2 col-sm-10">
+				    				<button type="submit" class="btn btn-primary">保存</button>
+				    			</div>
+						</div>
+		            </form>
+	            </div>
+   			</div>
+    		</div>
+	</div>

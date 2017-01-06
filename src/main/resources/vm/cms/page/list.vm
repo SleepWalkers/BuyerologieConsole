@@ -1,0 +1,56 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "CMS-USER"}])
+#set($title = "CMS-USER")
+
+
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2> CMS > 页面列表</h2>
+				</div>
+				<div class="panel-body">
+	    				<div class="mb10">
+						#if("#checkRole($!{gv_user.auth},'ROLE_CMS_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+	                    <a href="/cms/page/edit" target="_blank">
+	                        <input type="button" class="btn btn-primary" value="新增页面" />
+	                    </a>
+						#end
+                		</div>
+		            <table class="table md0">
+		                <thead>
+		                    <tr>
+		                        <th>ID</th>
+		                        <th>页面中文名</th>
+		                        <th></th>
+		                    </tr>
+		                </thead>
+		                <tbody>
+							#foreach($page in $!{pages})
+		                    <tr>
+		                        <td>$!{page.id}</td>
+								<td>$!{page.name}</td>
+		                        <td>
+									<a href="/cms/index?pageId=$!{page.id}" class="btn btn-default" target="_blank">
+									 内容编辑 
+									</a>
+		                            <a href="/cms/page/edit?pageId=$!{page.id}" target="_blank"  class="btn btn-default">
+		                              页面编辑
+									</a>
+									#if("#checkRole($!{gv_user.auth},'ROLE_CMS_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+									<a href="/cms/module/list?pageId=$!{page.id}" class="btn btn-default" target="_blank">
+									页面模块
+									</a>
+		                            <a class="mod-ajaxdel btn btn-danger" mod-data-params="{'pageId':$!{page.id},'redirectUrl':'/cms/page/list'}" mod-data-api="/api/cms/page/delete">
+		                               删除 
+									</a>
+									#end
+								</td>
+		                    </tr>
+							#end
+		                </tbody>
+		            </table>
+	            </div>
+       	 </div>
+    </div>
+</div>

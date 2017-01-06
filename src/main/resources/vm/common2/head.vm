@@ -1,0 +1,57 @@
+#parse("common2/gv_config.vm")
+<meta charset="UTF-8">
+<title></title>
+## 字体图标
+<link href="$!{gv_assetsRoot}fonts/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+## 模板自带的style样式文件
+<link href="$!{gv_assetsRoot}css/styles.css" type="text/css" rel="stylesheet">
+## 自定义样式
+<link href="$!{gv_assetsRoot}css/define.css" type="text/css" rel="stylesheet">
+## jstree样式文件
+<link href="$!{gv_assetsRoot}plugins/jstree/dist/themes/avalon/style.min.css" type="text/css" rel="stylesheet">
+## codeprettifier样式
+<link href="$!{gv_assetsRoot}plugins/codeprettifier/prettify.css" type="text/css" rel="stylesheet">
+## iCheck样式
+<link href="$!{gv_assetsRoot}plugins/iCheck/skins/minimal/blue.css" type="text/css" rel="stylesheet">
+## daterangepicker样式
+<link href="$!{gv_assetsRoot}plugins/form-daterangepicker/daterangepicker-bs3.css" type="text/css" rel="stylesheet">
+## switchery样式
+<link href="$!{gv_assetsRoot}plugins/switchery/switchery.css" type="text/css" rel="stylesheet">
+## fullcalendar样式
+<link href="$!{gv_assetsRoot}plugins/fullcalendar/fullcalendar.css" type="text/css" rel="stylesheet">
+
+## jQuery Ver.1.10.2
+<script src="$!{gv_assetsRoot}js/jquery-1.10.2.min.js"></script>
+## jQuery form
+<script src="$!{gv_assetsRoot}js/jquery.form.js"></script>
+## Twitter Bootstrap Ver.3.2.0
+<script src="$!{gv_assetsRoot}js/bootstrap.min.js"></script>
+## Bootstrap Datepicker
+<script src="$!{gv_assetsRoot}plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="$!{gv_assetsRoot}plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+## jQuery-slimscroll
+<script src="$!{gv_assetsRoot}plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+## iCheck
+<script src="$!{gv_assetsRoot}plugins/iCheck/icheck.min.js"></script>
+## Bootbox
+<script src="$!{gv_assetsRoot}plugins/bootbox/bootbox.js"></script>
+## Powerwidgets
+<script src="$!{gv_assetsRoot}plugins/powerwidgets/js/powerwidgets.js"></script>
+## Select2
+<link rel="stylesheet" href="$!{gv_assetsRoot}plugins/select2/select2.css">
+<script src="$!{gv_assetsRoot}plugins/select2/select2.js"></script>
+<script src="$!{gv_assetsRoot}plugins/select2/select2_locale_zh-CN.js"></script>
+
+
+## fullcalendar
+<script src="$!{gv_assetsRoot}plugins/fullcalendar/fullcalendar.js"></script>
+
+## 加载sea.js及其配置项
+<script type="text/javascript" charset="utf-8" src="$!{gv_assetsRoot}seajs/sea.js"></script>
+<script type="text/javascript" charset="utf-8" src="$!{gv_assetsRoot}base/config.js?t=$!{consoleConfig.jsTimestamp}"></script>
+
+## 打印机打印样式
+<style media="print" type="text/css">
+    .Noprint { display: none }
+    .PageNext{ page-break-after: always;}
+</style>

@@ -1,0 +1,13 @@
+## <!-- 底部 -->
+<input name="_synToken" type="hidden" value="${_synToken}" />
+<footer role="contentinfo">
+	<div class="clearfix">
+		## <!-- 返回顶部 -->
+		<button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top">
+			<i class="fa fa-arrow-up"></i>
+		</button>
+	</div>
+</footer>
+<script>
+	seajs.use("base/global");
+</script>

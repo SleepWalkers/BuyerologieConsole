@@ -1,0 +1,79 @@
+## <!-- 左部菜单栏 -->
+<div class="static-sidebar-wrapper sidebar-default">
+	<div class="static-sidebar">
+		## <!-- 左部菜单栏 -->
+		<div class="sidebar" style="min-height: 700px;">
+			## <!-- 用户信息部分 -->
+			<div class="widget stay-on-collapse">
+				<div class="widget-body welcome-box tabular">
+					<div class="tabular-row">
+						<div class="tabular-cell welcome-avatar">
+							<a href="#">
+								<img src="$!{gv_user.image}" class="avatar"></a>
+						</div>
+						<div class="tabular-cell welcome-options">
+							<span class="welcome-text">欢迎,</span>
+							<a href="#" class="name">$!gv_user.username</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			## <!-- 菜单主体部分 -->
+			<div class="widget stay-on-collapse" id="widget-sidebar">
+				<span class="widget-heading">浏览</span>
+				<nav role="navigation" class="widget-body">
+					<ul class="acc-menu">
+						<li>
+							<a href="/">
+								<i class="fa fa-home"></i>
+								<span>首页</span>
+							</a>
+						</li>
+						   
+                		 
+						<li>
+							<a href="javascript:;">
+								<i class="fa fa-money"></i>
+								<span>资讯</span>
+							</a>
+                			<ul class="acc-menu">
+								<li><a href="/news/list">资讯列表</a></li>
+                			</ul>
+                		</li>
+						<li>
+							<a href="javascript:;">
+								<i class="fa fa-money"></i>
+								<span>尚课</span>
+							</a>
+                			<ul class="acc-menu">
+								<li><a href="/course/list">尚课列表</a></li>
+                			</ul>
+                		</li>
+						<li>
+							<a href="javascript:;">
+								<i class="fa fa-money"></i>
+								<span>保利威视</span>
+							</a>
+                			<ul class="acc-menu">
+								<li><a href="/play/list">视频列表</a></li>
+                			</ul>
+                		</li>
+						<li>
+							<a href="/user/authority">
+								<i class="fa fa-money"></i>
+								<span>权限管理</span>
+							</a>
+                		</li>
+						<li>
+							<a href="/cms/page/list">
+								<i class="fa fa-dropbox"></i>
+								<span>CMS</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,71 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "CMS-USER"}])
+#set($title = "CMS > $!{module.moduleName}记录列表")
+
+
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2> $!{module.moduleName}记录列表  </h2>
+				</div>
+				<div class="panel-body">
+			        <div class="mod-box">
+						<div class="mod-viewbox">
+			                <form class="form-horizontal mod-ajaxform" action="/api/cms/record/type/edit" method="POST">
+								<input type="hidden" name="moduleId" value="$!{module.id}"/>
+								<input type="hidden" name="redirectUrl" value="/cms/record/list?moduleId=$!{module.id}"/>
+			    					<div class="form-group">
+					    				<div class="mod-viewbox-bd">
+					    					 <div class="mod-korows">
+					    						<table class="table md0" >
+					                                <thead>
+					                                    <tr>
+					                                        <th>记录中文名</th>
+					                                        <th></th>
+					                                    </tr>
+					                                </thead>
+					                                <tbody >
+					    								#foreach($record in $!{records})
+					                					<tr>
+					                						<td>
+																<input type="hidden" name="recordIdArr" value="$!{record.id}"/>
+					                							<input type="text" name="recordNameArr" value="$!{record.name}"/>
+					                						</td>
+					        								<td>
+					                                            <a href="javascript:;" class="btn btn-danger mod-ajaxdel" mod-data-api="/api/cms/record/type/delete?recordId=$!{record.id}&redirectUrl=/cms/record/list?moduleId=$!{module.id}">删除</a>
+					                                        </td>
+					                					</tr>
+					    								#end
+					    								
+					                                    <!-- ko foreach: rows -->
+					                                    <tr>
+					                                        <td>
+																<input type="hidden" name="recordIdArr" value="0"/>
+					                                            <input type="text"  name="recordNameArr" />
+					                                        </td>
+					                                        <td>
+					                                            <a href="javascript:;" class="btn btn-danger" data-bind="click: $root.removeRow">删除</a>
+					                                        </td>
+					                                    </tr>
+					                                    <!-- /ko -->
+					                                </tbody>
+					    						</table>
+					            				<div class="mod-row">
+					    							<button type="button" class="btn btn-primary" data-bind="click: addRow.bind($data)">新增</button>
+					    						</div>
+					    					 </div>
+					    				</div>
+				    				</div>
+				    				<div class="form-group">
+							 	 	<div class="col-sm-offset-2 col-sm-10">
+						    				<button type="submit" class="btn btn-default">保存</button>
+						    			</div>
+								</div>
+			                </form>
+						</div>
+			        </div>
+		        </div>
+	        </div>
+		</div>
+	</div>

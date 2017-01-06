@@ -1,0 +1,33 @@
+.col-main {
+  position: relative;
+}
+.col-main h2.title {
+  padding-left: 10px;
+  border-left: 1px solid #AAA;
+  border-right: 1px solid #AAA;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  background: url("http://test.showjoy.com/console/assets/1.0/image/header-footer-bg.png") 0 -100px repeat-x #dddddd;
+}
+.col-main .toolbar-btn {
+  position: absolute;
+  top: 7px;
+  right: 120px;
+}
+.col-main .pictag-list {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.col-main .pictag-list li {
+  float: left;
+  width: 150px;
+  text-align: center;
+  padding: 20px 0 20px;
+}
+.col-main .pictag-list li .pic {
+  margin-bottom: 10px;
+}

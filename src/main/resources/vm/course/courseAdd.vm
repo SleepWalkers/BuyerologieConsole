@@ -1,0 +1,72 @@
+#set($useCKEditor = true)
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "尚课"}])
+#set($title = "新增尚课")
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+		<div class="panel panel-default" id="p1">
+			<div class="panel-heading">
+				<h2></h2>
+			</div>
+			
+			<div class="panel-body">
+				<div class="p10">
+					<label for="zhName">
+						<b class="mod-ajaxform-require">*</b>标题：
+					</label>
+					
+                    <div >
+                    	<input id="title" name="title" class="form-control" value="#if($!{course})$!{course.title}#end" type="text">
+                    </div>
+				</div>
+				
+				<div class="p10">
+					<label for="zhName">
+						<b class="mod-ajaxform-require">*</b>视频ID：
+					</label>
+                    <div >
+						<input id="videoId" name="videoId" class="form-control" value="#if($!{course})$!{course.videoId}#end" type="text">
+                    </div>
+				</div>
+				<div class="p10">
+					<textarea class="ckeditor" name="ckeditor">#if($!{course})$!{course.content.content}#end</textarea>
+				</div>
+				<div class="p10">
+					<button type="submit" class="btn-primary btn" id="editorSubmit">保存</button>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$("#editorSubmit").on("click", function(e){
+    $.ajax({
+		type:'post',
+		#if($!{course})
+			url:'/api/course/edit',
+		#else
+			url:'/api/course/add',
+		#end
+		data:{
+			title:$("#title").val(),
+			videoId:$("#videoId").val(),
+			#if($!{course})
+				courseId:$!{course.id},
+			#end
+			content:CKEDITOR.instances.ckeditor.getData()
+		},
+		dataType:'json',
+		success:function(data){
+			if (data.isRedirect) {
+				location.href=data.redirectURL;
+			} else {
+				if (data.isSuccess) {
+					location.reload();
+				} else {
+					alert(data.msg);
+				};
+			}
+		}
+	});
+});
+</script>

@@ -1,0 +1,49 @@
+## $title 页面title
+## $mijmo 是否使用wijmo库
+## $styleArr 样式文件数组
+<meta charset="utf-8"/>
+<title>$!{title}-$!{consoleConfig.appTitle}</title>
+<link rel="shortcut icon" href="$!{consoleConfig.favicon}" type="image/x-icon"/>
+## 加载jQuery
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}lib/jquery/jquery-1.8.2.min.js"></script>
+## 加载wijmo
+#if($!wijmo)
+<link rel="stylesheet" type="text/css" href="$!{consoleConfig.assetsRoot}lib/wijmo/jquery.wijmo-complete.all.2.3.6.min.css"/>
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}lib/jquery-ui/jquery-ui-1.9.1.custom.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}lib/wijmo/jquery.wijmo-open.all.2.3.6.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}lib/wijmo/jquery.wijmo-complete.all.2.3.6.min.js"></script>
+#end
+
+## 加载UEditor
+#if($!ueditor)
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}lib/ueditor1_4_2/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}lib/ueditor1_4_2/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}lib/ueditor1_4_2/lang/zh-cn/zh-cn.js"></script>
+#end
+
+## 加载样式
+## 加载公用样式
+<link rel="stylesheet" type="text/css" id="skin" href="$!{consoleConfig.assetsRoot}common/global.css?t=$!{consoleConfig.jsTimestamp}" />
+#foreach($!style in $!styleArr)
+<link rel="stylesheet#if($!consoleConfig.mode =="debug")/less#end" type="text/css" href="$!{consoleConfig.assetsRoot}$!{style}#if($!consoleConfig.mode =="debug").less#else.css#end?t=$!{consoleConfig.cssTimestamp}"/>
+#end
+## debug模式下加载less.js 用于调试
+#if($!consoleConfig.mode=="debug")
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}less-1.3.3.min.js"></script>
+#end
+
+## 加载sea.js及其配置项
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}sea.js"></script>
+<script type="text/javascript" charset="utf-8" src="$!{consoleConfig.assetsRoot}base/config.js?t=$!{consoleConfig.jsTimestamp}"></script>
+<script type="text/javascript">window.appRoot="$!{consoleConfig.appRoot}";</script>
+## TODO暂时用美图秀秀传图 ##
+<script src="http://open.web.meitu.com/sources/xiuxiu.js" type="text/javascript"></script>
+
+<script language="javascript" type="text/javascript" src="$!{consoleConfig.assetsRoot}My97DatePicker/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="$!{consoleConfig.assetsRoot}mod/jquery.cookie.js"></script>
+
+
+<style media="print" type="text/css">
+         .Noprint { DISPLAY: none }
+         .PageNext{ PAGE-BREAK-AFTER: always;}
+   </style>

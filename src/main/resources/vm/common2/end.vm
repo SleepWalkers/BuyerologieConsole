@@ -1,0 +1,11 @@
+<script src="$!{gv_assetsRoot}js/enquire.min.js"></script>
+<script src="$!{gv_assetsRoot}js/application.js"></script>
+<script src="$!{gv_assetsRoot}main/main.js"></script>
+
+## useCKEditor
+#if($!{useCKEditor})
+<script>
+	CKEDITOR_BASEPATH  =  "$!{gv_assetsRoot}plugins/form-ckeditor/";
+</script>
+<script src="$!{gv_assetsRoot}plugins/form-ckeditor/ckeditor.js"></script> 
+#end

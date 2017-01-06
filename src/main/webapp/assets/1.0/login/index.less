@@ -1,0 +1,68 @@
+@import "../common/dpl.less";
+
+#content {
+  #welcome-login{
+      width:890px;
+      padding:77px 50px;
+     .col-sub{
+        position:relative;
+        width:500px;
+        text-align:right;
+        .brand-logo{
+        position:absolute;
+        left:50px;
+        top:30px;
+        }
+     }
+     .col-main{
+      width:340px;
+     }
+  }
+}
+.login-form{
+   margin-top: 70px;
+   padding:10px 45px 50px;
+   border:1px solid @base-border-color;
+   border-top:5px solid #666;
+   text-align:center;
+   li{
+      margin:15px 0;
+      label{
+         display:inline-block;
+         width:60px;
+         margin-right:20px;
+      }
+   }
+   input{
+     display:inline-block;
+     width:150px;
+   }
+   .login-authority{
+     height:22px;
+     position:relative;
+     .login-err-msg{
+       color:#f00;
+       display:none;
+       position:absolute;
+       left:0;
+     }
+     a{
+       color:#0fc3ff!important;
+       text-decoration:underline;
+       position:absolute;
+       right:0;
+     }
+   }
+   .login-action{
+      margin-top:20px;
+      text-align:right;
+      input{
+        margin-right:10px;
+        width:auto;
+      }
+      button{
+         margin-left:15px;
+         padding: 0 20px;
+      }
+   }
+}

@@ -1,0 +1,301 @@
+#spu-detail .crumbs-nav {
+  padding-left: 10px;
+  border-right: 1px solid #aaaaaa;
+  height: 30px;
+  line-height: 30px;
+  background: url("http://file.showjoy.com/assets/img/console/header-footer-bg.png") 0 -100px repeat-x #dddddd;
+}
+#spu-detail .spu-ctn {
+  *zoom: 1;
+  width: auto;
+}
+#spu-detail .spu-ctn:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-info {
+  *zoom: 1;
+  float: left;
+  width: 160px;
+  border-top: 1px solid #aaaaaa;
+  text-align: center;
+}
+.spu-info:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-tab {
+  *zoom: 1;
+  float: right;
+  width: 822px;
+  min-height: 527px;
+  height: auto !important;
+  height: 527px;
+}
+.spu-tab:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-tab .info-search-help {
+  padding-bottom: 12px;
+}
+.spu-tab .info-search-help button {
+  margin: 0 10px;
+}
+.spu-tag .spu-tag-manage {
+  position: relative;
+  *zoom: 1;
+  width: auto;
+}
+.spu-tag .spu-tag-manage:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-tag .spu-tag-manage .spu-tag-tree {
+  *zoom: 1;
+  float: left;
+  width: 300px;
+}
+.spu-tag .spu-tag-manage .spu-tag-tree:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-tag .spu-tag-manage .spu-tag-tree .wijmo-wijtree {
+  width: 285px;
+  min-height: 400px;
+  height: auto !important;
+  height: 400px;
+}
+.spu-tag .spu-tag-manage .spu-tag-list {
+  *zoom: 1;
+  float: right;
+  width: 473px;
+  padding-left: 10px;
+}
+.spu-tag .spu-tag-manage .spu-tag-list:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-tag .spu-tag-manage .spu-tag-list li {
+  padding: 5px 10px;
+  border: 1px solid #aaaaaa;
+  margin: 0 10px 10px 0;
+  overflow: hidden;
+  text-align: center;
+}
+.spu-tag .spu-tag-manage .spu-tag-list input,
+.spu-tag .spu-tag-manage .spu-tag-list button {
+  margin: 0 10px;
+  display: inline-block;
+}
+.spu-tag .spu-tag-manage .spu-tag-list button {
+  padding: 0 15px;
+}
+.spu-tag .spu-tag-manage .spu-tag-list .spu-rel-tag {
+  display: inline-block;
+  width: 110px;
+  color: #b10000;
+}
+.spu-tag .spu-tag-manage .spu-tag-list .spu-rel-tag-factor {
+  width: 50px;
+  text-align: center;
+}
+.spu-tag .spu-tag-manage .spu-tag-list .spu-rel-tag-mark {
+  display: inline-block;
+  font-size: 20px;
+  vertical-align: middle;
+  visibility: hidden;
+}
+.spu-tag .spu-tag-manage .spu-tag-list .spu-rel-tag-unsave {
+  color: #f00;
+  visibility: visible;
+}
+.spu-tag .spu-tag-manage .spu-tag-list .spu-rel-tag-saved {
+  color: #0f0;
+  visibility: visible;
+}
+.spu-tag .spu-tag-manage .del-all-tag {
+  position: absolute;
+  top: -40px;
+  right: 10px;
+}
+.spu-comment .write-comment-form li {
+  margin: 10px 0;
+}
+.spu-comment .write-comment-form label {
+  margin-right: 10px;
+}
+.spu-comment .write-comment-form input {
+  width: 140px;
+  margin-right: 10px;
+}
+.spu-comment .write-comment-form .wijmo-wijinput {
+  padding-right: 10px;
+}
+.spu-comment .write-comment-form .comment-ctn {
+  width: 740px;
+  height: 300px;
+}
+.spu-comment .write-comment-form .wijmo-wijeditor {
+  margin-top: 10px;
+}
+.spu-comment .write-comment-form .write-comment-action {
+  text-align: center;
+}
+.spu-comment .comment-manage-form {
+  *zoom: 1;
+  width: auto;
+  margin-bottom: 10px;
+}
+.spu-comment .comment-manage-form:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-comment .comment-manage-form li {
+  float: left;
+}
+.spu-comment .comment-manage-form .user-filter,
+.spu-comment .comment-manage-form .comment-search-btn {
+  padding-left: 20px;
+}
+.spu-comment .spu-comment-grid {
+  text-align: center;
+}
+.spu-comment .spu-comment-grid .del-comment {
+  width: 40px;
+}
+.spu-sku h3 {
+  font-size: 18px;
+  line-height: 30px;
+}
+.spu-sku .sku-list th,
+.spu-sku .sku-list td {
+  border: 1px solid #aaaaaa;
+  padding: 10px;
+}
+.spu-sku .sku-list .sku-volume {
+  text-align: center;
+}
+.spu-desc .spu-desc-manage li {
+  margin: 10px 0;
+}
+.spu-desc .spu-desc-manage .spu-intro,
+.spu-desc .spu-desc-manage .spu-seo-desc {
+  width: 740px;
+  height: 300px;
+}
+.spu-desc .spu-desc-manage .spu-desc-action {
+  text-align: center;
+}
+.spu-base .spu-base-form {
+  *zoom: 1;
+  width: 780px;
+}
+.spu-base .spu-base-form:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-base .spu-base-form li {
+  position: relative;
+  float: left;
+  width: 370px;
+  padding-left: 20px;
+  margin: 10px 0;
+  height: 30px;
+}
+.spu-base .spu-base-form li label {
+  display: inline-block;
+  width: 60px;
+  line-height: 30px;
+}
+.spu-base .spu-base-form li .spu-base-require {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 20px;
+  text-align: center;
+  line-height: 30px;
+  color: #f00;
+}
+.spu-base .spu-base-form li .wijmo-wijradio {
+  display: inline-block;
+}
+.spu-base .spu-base-action {
+  margin-top: 30px;
+  text-align: center;
+}
+.spu-scent {
+  width: 790px;
+}
+.spu-scent .spu-scent-con {
+  margin: 10px 0 30px;
+  border: 1px solid #aaaaaa;
+  position: relative;
+  padding-left: 30px;
+}
+.spu-scent .spu-scent-con h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  line-height: 60px;
+  border-right: 1px solid #aaaaaa;
+}
+.spu-scent .spu-scent-con .scent-select {
+  padding: 10px;
+}
+.spu-scent .spu-scent-con .scent-list {
+  *zoom: 1;
+  width: auto;
+}
+.spu-scent .spu-scent-con .scent-list:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.spu-scent .spu-scent-con .scent-list li {
+  float: left;
+  font-size: 16px;
+  padding: 0 10px;
+  margin-left: 10px;
+  border: 1px solid #aaaaaa;
+}
+.spu-scent .spu-scent-con .scent-list .scent-name {
+  color: #6B5618;
+  padding-right: 5px;
+}
+.spu-scent .spu-scent-con .scent-list .spu-scent-del {
+  text-decoration: none;
+  font-weight: bold;
+}
+.spu-scent .spu-scent-con .scent-desc {
+  width: 710px;
+  margin: 10px;
+  padding: 5px 10px;
+  height: 60px;
+}
+.spu-scent .scent-action {
+  text-align: center;
+}

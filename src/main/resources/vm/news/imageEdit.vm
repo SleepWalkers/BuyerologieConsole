@@ -1,0 +1,149 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "资讯图片"}])
+#set($title = "资讯 > 图片编辑")
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2>资讯图片编辑</h2>
+				</div>
+				<div class="panel-body">
+					<form  class="form-horizontal mod-ajaxform" action="/api/news/image/upload" method="post" enctype="multipart/form-data" data-refresh="true">	
+						<input name="_synToken" type="hidden" value="$!{_synToken}">
+							<div class="mod-viewbox-bd">
+	        						<div class="form-group">
+									<div class="mod-grid mod-korows">
+										<b style="color:red">资讯列表页图片1</b>
+										<input type="hidden" name="newsId" value="$!{newsId}"/>
+										<input type="hidden" name="imageType" value="1"/>
+										<input type="hidden" name="redirectUrl" value="/news/image/edit?id=$!{newsId}"/>
+										<table class="table md0">
+											<thead>
+												<tr>
+													<th>编号</th>
+													<th>图片</th>																														
+													<th>操作</th>
+												</tr>
+											</thead>
+											<tbody>
+												#if($!{listImage1})
+													<input type="hidden" name="imageId" value="$!{listImage1.id}"/>
+    												 <tr>
+    	                                                <td>$!{listImage1.id}</td>												
+    													<td><img src="$!{listImage1.imagePath}" height=300px style="backround-color:#000"/><input type="file" name="imageFile"/></td>
+    													<td>
+    														<a class="btn btn-danger mod-ajaxdel" mod-data-params="{'imageId':$!{listImage1.id},'newsId':$!{newsId},'redirectUrl':'/news/image/edit?id=$!{newsId}'}" mod-data-api="/api/news/image/delete">删除</a>
+    													</td>	                                            
+    												 </tr>
+												#else
+												 <tr>
+	                                                <td></td>												
+													<td><input type="file" name="imageFile"/></td>
+	                                                <td></td>
+	                                            </tr>
+												#end
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+                                </div>
+                            </div>
+							<div class="form-group">
+						 	 	<div class="col-sm-offset-2 col-sm-10">
+					    				<button type="submit" class="btn btn-primary">保存信息</button>
+					    		</div>
+							</div>
+				    		</form>
+							<form  class="form-horizontal mod-ajaxform" action="/api/news/image/upload" method="post" enctype="multipart/form-data" data-refresh="true">	
+						<input name="_synToken" type="hidden" value="$!{_synToken}">
+							<div class="mod-viewbox-bd">
+	        						<div class="form-group">
+									<div class="mod-grid mod-korows">
+										<b style="color:red">资讯列表页图片2</b>
+										<input type="hidden" name="newsId" value="$!{newsId}"/>
+										<input type="hidden" name="imageType" value="1"/>
+										<input type="hidden" name="redirectUrl" value="/news/image/edit?id=$!{newsId}"/>
+										<table class="table md0">
+											<thead>
+												<tr>
+													<th>编号</th>
+													<th>图片</th>																														
+													<th>操作</th>
+												</tr>
+											</thead>
+											<tbody>
+												#if($!{listImage2})
+													<input type="hidden" name="imageId" value="$!{listImage2.id}"/>
+    												 <tr>
+    	                                                <td>$!{listImage2.id}</td>												
+    													<td><img src="$!{listImage2.imagePath}" height=300px style="backround-color:#000"/><input type="file" name="imageFile"/></td>
+    													<td>
+    														<a class="btn btn-danger mod-ajaxdel" mod-data-params="{'imageId':$!{listImage2.id},'newsId':$!{newsId},'redirectUrl':'/news/image/edit?id=$!{newsId}'}" mod-data-api="/api/news/image/delete">删除</a>
+    													</td>	                                            
+    												 </tr>
+												#else
+												 <tr>
+	                                                <td></td>												
+													<td><input type="file" name="imageFile"/></td>
+	                                                <td></td>
+	                                            </tr>
+												#end
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+                                </div>
+                            </div>
+							<div class="form-group">
+						 	 	<div class="col-sm-offset-2 col-sm-10">
+					    				<button type="submit" class="btn btn-primary">保存信息</button>
+					    			</div>
+							</div>
+				    		</form>
+							<form  class="form-horizontal mod-ajaxform" action="/api/news/image/upload" method="post" enctype="multipart/form-data" data-refresh="true">	
+								<input name="_synToken" type="hidden" value="$!{_synToken}">
+									<div class="mod-viewbox-bd">
+	        						<div class="form-group">
+									<div class="mod-grid mod-korows">
+										<b style="color:red">个人中心收藏图片</b>
+										<input type="hidden" name="imageType" value="2"/>
+										<table class="table md0">
+											<thead>
+												<tr>
+													<th>编号</th>
+													<th>图片</th>																														
+													<th>操作</th>
+												</tr>
+											</thead>
+											<tbody>
+												<input type="hidden" name="newsId" value="$!{newsId}"/>
+												<input type="hidden" name="redirectUrl" value="/news/image/edit?id=$!{newsId}"/>
+                								#if($!{collectImage})
+													<input type="hidden" name="imageId" value="$!{collectImage.id}"/>
+    												 <tr>
+    	                                                <td>$!{collectImage.id}</td>												
+    													<td><img src="$!{collectImage.imagePath}" height=300px style="backround-color:#000"/><input type="file" name="imageFile"/></td>
+    													<td>
+    														<a class="btn btn-danger mod-ajaxdel" mod-data-params="{'imageId':$!{collectImage.id},'newsId':$!{newsId},'redirectUrl':'/news/image/edit?id=$!{newsId}'}" data-refresh="true" mod-data-api="/api/news/image/delete">删除</a>
+    													</td>	                                            
+    												 </tr>
+												#else
+												 <tr>
+	                                                <td></td>												
+													<td><input type="file" name="imageFile"/></td>
+	                                                <td></td>
+	                                            </tr>
+												#end
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+                                </div>
+                            </div>
+							<div class="form-group">
+						 	 	<div class="col-sm-offset-2 col-sm-10">
+					    				<button type="submit" class="btn btn-primary">保存信息</button>
+					    			</div>
+							</div>
+				    		</form>
+						</div>
+    				</div>
+       	 	</div>
+        </div>

@@ -1,0 +1,82 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "CMS-USER", "href": "/cms/page/list"},{"name": "CMS-CORE"}])
+#set($title = "CMS > $!{page.pageName}内容编辑")
+<div class="row" id="panel-advancedoptions">
+#foreach($moduleName in $!{page.moduleNames})
+    #set($moduleList = $!{page.moduleMap.get($!{moduleName})})
+    #set($sampleModule = $!{moduleList.get(0)})
+    #set($recordTypes = $!{sampleModule.recordNames})
+	<div class="col-xs-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2> $!{moduleName}</h2>
+			</div>
+			<div class="panel-body">
+                <form class="form-horizontal mod-ajaxform" action="/api/cms/publish" method="POST">
+                	<input type="hidden" name="redirectUrl" value="/cms/index?pageId=$!{page.id}"/>
+                	<input type="hidden" name="sampleModuleId" value="$!{sampleModule.id}"/>
+                    <div class="mod-korows">
+                        <table class="table md0" >
+                            <thead>
+                                <tr>
+                                    #foreach($recordType in $!{recordTypes})
+                                        <th>$!{recordType}</th>
+                                    #end
+                                    #if("#checkRole($!{gv_user.auth},'ROLE_CMS_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+                                        <th>操作</th>
+                                    #end
+                                </tr>
+                            </thead>
+                            <tbody >
+                                #foreach($module in $!{moduleList})
+                                    <tr>
+                                        #foreach($recordType in $!{recordTypes})
+                                            <td>
+                                                <input type="hidden" name="recordIdArr" value="$!{module.recordMap.get($!{recordType}).id}"/>
+												#if($!{module.recordMap.get($!{recordType}).value.length()} > 120)
+                                                <textarea name="recordValueArr" style="width:100%; height: 300px">$!{module.recordMap.get($!{recordType}).value}</textarea>
+												#else
+												<input type="text" name="recordValueArr" class="form-control" value="$!{module.recordMap.get($!{recordType}).value.replace('"','&quot;')}"/>
+												#end
+                                            </td>
+                                        #end
+                                        #if("#checkRole($!{gv_user.auth},'ROLE_CMS_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+                                            <td>
+                                                <a class="btn btn-danger mod-ajaxdel" mod-data-params="{'moduleId':$!{module.id},'redirectUrl':'/cms/index?pageId=$!{page.id}'}" mod-data-api="/api/cms/module/delete">删除</a>
+                                            </td>
+                                        #end
+                                    </tr>
+                                #end
+                                #if("#checkRole($!{gv_user.auth},'ROLE_CMS_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+                                    <!-- ko foreach: rows -->
+                                    <tr>
+                                        #foreach($recordType in $!{recordTypes})
+                                        <td>
+                                            <input type="hidden" name="recordNameArr" value="$!{recordType}"/>
+                                            <input type="text" class="form-control" name="newRecordValueArr" value="" />
+                                        </td>
+                                        #end
+                                        <td>
+                                            <a href="javascript:;" class="btn btn-danger" data-bind="click: $root.removeRow">删除</a>
+                                        </td>
+                                    </tr>
+                                    <!-- /ko -->
+                                #end
+                            </tbody>
+                        </table>
+                        #if("#checkRole($!{gv_user.auth},'ROLE_CMS_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+                            <div class="mod-row">
+                                <button type="button" class="btn btn-primary" data-bind="click: addRow.bind($data)">新增</button>
+                            </div>
+                        #end
+                    </div>
+			 	 	<div class="col-sm-offset-2 col-sm-10">
+	    				<button type="submit" class="btn btn-primary">保存</button>
+	    			</div>
+                </form>
+            </div>
+        </div>
+     </div>
+  
+#end  
+</div>

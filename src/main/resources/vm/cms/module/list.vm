@@ -1,0 +1,47 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "CMS-USER"}])
+#set($title = "CMS")
+
+
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2>CMS > $!{page.name}模块列表 </h2>
+				</div>
+				<div class="panel-body">
+					<div class="mb10">
+		                <a href="/cms/module/edit?pageId=$!{page.id}" class="btn btn-primary" target="_blank">
+		                   新增模版
+		                </a>
+                		</div>
+		            <table class="table md0">
+		                <thead>
+		                    <tr>
+		                        <th>模块中文名</th>
+		                        <th></th>
+		                    </tr>
+		                </thead>
+		                <tbody>
+							#foreach($module in $!{modules})
+		                    <tr>
+								<td>$!{module.name}</td>
+		                        <td>
+		                            <a href="/cms/module/edit?pageId=$!{page.id}&moduleId=$!{module.id}" class="btn btn-default" target="_blank">
+										编辑
+									</a>
+									<a href="/cms/record/list?pageId=$!{page.id}&moduleId=$!{module.id}" class="btn btn-default" target="_blank">
+									 记录 
+									</a>
+		                            <a class="btn btn-danger mod-ajaxdel" mod-data-params="{'moduleId':$!{module.id},'redirectUrl':'/cms/module/list?pageId=$!{page.id}'}" mod-data-api="/api/cms/module/type/delete">
+		                            删除
+		                            </a>
+								</td>
+		                    </tr>
+							#end
+		                </tbody>
+		            </table>
+	            </div>
+	        </div>
+	    </div>
+	</div>

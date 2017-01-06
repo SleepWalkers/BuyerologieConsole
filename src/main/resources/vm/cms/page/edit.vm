@@ -1,0 +1,68 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "CMS-CMS"}])
+#set($title = "核心页面 > #if(!$!{page})新增#{else}修改#end页面")
+
+
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2>$!{page.name}</h2>
+				</div>
+				<div class="panel-body">
+	                <form class="form-horizontal mod-ajaxform" action="/api/cms/page/#if(!$!{page})add#{else}edit#end" method="POST">
+	                    <input type="hidden" name="redirectUrl" value="#if($!{page})/cms/page/edit?pageId=$!{page.id}#else/cms/page/list#end"/>
+	                    #if($!{page})
+	                    	<input type="hidden" name="pageId" value="$!{page.id}"/>
+						#end
+					  <div class="form-group">
+	                        <label class="col-xs-2 control-label" for="name">
+	                        		<b style="color:red">*</b>页面中文名：
+                        		</label>
+                        		<div class="col-xs-4">
+                       		<input class="form-control" type="text" name="zhName" value="$!{page.name}" required>
+                       		</div>
+             		  </div>
+             		  
+             		   <div class="form-group">
+	                        <label class="col-xs-2 control-label" for="name">
+	                        		<b style="color:red">*</b>页面英文名：
+                        		</label>
+                        		<div class="col-xs-4">
+                       		   <input type="text" class="form-control" name="enName" value="$!{page.enName}" required>
+                       		</div>
+                   		</div>
+                       
+                       
+                        <div class="form-group">
+	                        <label class="col-xs-2 control-label" for="name">
+	                        		标题：
+                        		</label>
+                        		<div class="col-xs-8">
+                       		 	<input type="text" class="form-control" name="title" value="$!{page.title}">
+					    		</div>
+					     </div> 
+                       
+                       <div class="form-group">
+	                        <label class="col-xs-2 control-label" for="name">
+	                        		描述：
+                        		</label>
+                   		   <textarea   style="width:80%; height: 200px" name="description">$!{page.description}</textarea>
+				     </div>
+				     
+				     <div class="form-group">
+	                        <label class="col-xs-2 control-label" for="name">
+	                        		关键词:
+                        		</label>
+                   			<textarea   style="width:80%; height: 200px" name="keywords">$!{page.keywords}</textarea>
+					   </div>
+					 <div class="form-group">
+					 	 <div class="col-sm-offset-2 col-sm-10">
+				    			<button type="submit" class="btn btn-primary">保存</button>
+			    			</div>
+					</div>
+                </form>
+        		</div>
+    		</div>
+	</div>
+</div>	

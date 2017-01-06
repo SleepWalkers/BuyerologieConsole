@@ -1,0 +1,34 @@
+#set($isEmptyPage = true)
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+<title>$!{consoleConfig.appTitle}</title>
+## 字体图标
+<link href="/assets/2.0/fonts/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+## 模板自带的style样式文件
+<link href="/assets/2.0/css/styles.css" type="text/css" rel="stylesheet">
+## 自定义样式
+<link href="/assets/2.0/css/define.css" type="text/css" rel="stylesheet">
+
+## jQuery Ver.1.10.2
+<script src="/assets/2.0/js/jquery-1.10.2.min.js"></script>
+## jQuery form
+<script src="/assets/2.0/js/jquery.form.js"></script>
+## Twitter Bootstrap Ver.3.2.0
+<script src="/assets/2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div style="position: absolute; top: 50%; left: 50%; width: 400px; height: 300px; margin-left: -200px; margin-top: -150px;">
+		<p class="J_errorFont" style="font-size: 120px;">404</p>
+		<p class="J_errorFont" style="font-size: 40px;">你要的页面找不到了~</p>
+	</div>
+</body>
+<style>
+html, body{position: relative; width: 100%; height: 100%;}
+## http://file.showjoy.com/images/51/511a4f9ee74f45aeb199fe9aea98fccb.jpg 
+html{background-image: url("http://file.showjoy.com/images/51/511a4f9ee74f45aeb199fe9aea98fccb.jpg");background-size: cover;}
+body{background-color: #000; opacity: 0.75;}
+.J_errorFont{color: #fff; text-align: center};
+</style>
+</html>

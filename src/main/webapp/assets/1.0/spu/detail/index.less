@@ -1,0 +1,252 @@
+@import "../../common/dpl.less";
+#spu-detail{
+   .crumbs-nav{
+       padding-left:10px;
+       border-right:1px solid @base-border-color;
+       height:30px;
+       line-height:30px;
+       background:url("@{base-assets-url}/header-footer-bg.png") 0 -100px repeat-x #ddd;
+   }
+   .spu-ctn{
+       .wrap(auto);
+   }
+}
+
+.spu-info{
+  .col-left(160px);
+  border-top:1px solid @base-border-color;
+  text-align:center;
+}
+.spu-tab{
+  .col-right(822px);
+  .min-height(527px);
+  .info-search-help{
+     padding-bottom:12px;
+     button{
+        margin:0 10px;
+     }
+  }
+}
+
+.spu-tag{
+  .spu-tag-manage{
+    position:relative;
+    .wrap(auto);
+    .spu-tag-tree{
+       .col-left(300px);
+       .wijmo-wijtree{
+   	      width:285px;
+   	      .min-height(400px);
+	   }
+     }
+    .spu-tag-list{
+       .col-right(473px);
+       padding-left:10px;
+       li{
+         padding:5px 10px;
+         border:1px solid @base-border-color;
+         margin:0 10px 10px 0;
+         overflow:hidden;
+         text-align:center; 
+       }
+       input,button{
+          margin:0 10px;
+          display:inline-block;
+       }
+       button{
+          padding:0 15px;
+       }
+       .spu-rel-tag{
+         display:inline-block;
+         width:110px;
+         color:#b10000;
+       }
+       .spu-rel-tag-factor{
+         width:50px;
+         text-align:center;
+       }
+       .spu-rel-tag-mark {
+         display:inline-block;
+         font-size:20px;
+         vertical-align:middle;
+         visibility:hidden;
+       }
+       .spu-rel-tag-unsave{
+         color:#f00;
+         visibility:visible;
+       }
+       .spu-rel-tag-saved{
+         color:#0f0;
+         visibility:visible;
+       }
+    }
+    .del-all-tag{
+       position:absolute;
+       top:-40px;
+       right:10px;
+    } 
+  }
+}
+.spu-comment{
+   .write-comment-form{
+     li{
+       margin:10px 0;
+     }
+     label{
+       margin-right:10px;
+     }
+     input{
+       width:140px;
+       margin-right:10px;
+     }
+     .wijmo-wijinput{
+       padding-right:10px;
+     }
+     .comment-ctn{
+        width: 740px; 
+        height: 300px;
+     }
+     .wijmo-wijeditor{
+        margin-top:10px;
+     }
+     .write-comment-action{
+       text-align:center;
+     }
+   }
+   
+   .comment-manage-form{
+     .wrap(auto);
+     margin-bottom:10px;
+     li{
+       float:left;
+     }
+     .user-filter,.comment-search-btn{
+       padding-left:20px;
+     }
+   }
+   .spu-comment-grid{
+       text-align: center;
+       .del-comment{
+          width:40px;
+       }
+   }
+}
+
+.spu-sku{
+   h3{
+     font-size:18px;
+     line-height:30px;
+   }
+   .sku-list{  
+     th,td{
+       border:1px solid @base-border-color;
+       padding:10px;
+     }
+     .sku-volume{
+       text-align:center;
+     }
+   }
+}
+
+.spu-desc{
+   .spu-desc-manage{
+     li{
+       margin:10px 0;
+     }
+     .spu-intro,.spu-seo-desc{
+        width: 740px; 
+        height: 300px;
+     }
+     .spu-desc-action{
+       text-align:center;
+     }
+   }
+}
+
+.spu-base{
+  .spu-base-form{
+    .wrap(780px);
+    li{
+      position:relative;
+      float:left;
+      width:370px;
+      padding-left:20px;
+      margin:10px 0; 
+      height:30px; 
+      label{
+        display:inline-block;
+        width:60px;
+        line-height:30px;
+      }
+      .spu-base-require{
+	      position:absolute;
+	      top:0;
+	      left:0;
+	      display:block;
+	      width:20px;
+	      text-align:center;
+	      line-height:30px;
+	      color:#f00;
+      }
+      .wijmo-wijradio{
+         display:inline-block;
+      }
+    }
+  }
+  .spu-base-action{
+      margin-top:30px;
+      text-align:center;
+  }
+}
+
+.spu-scent{
+  width:790px;
+  .spu-scent-con{
+    margin:10px 0 30px;
+    border:1px solid @base-border-color;
+    position:relative;
+    padding-left:30px;
+    h3{
+      position:absolute;
+      top:0;
+      left:0;
+      height:100%;
+      width:30px;
+      font-weight:bold;
+      font-size:18px;
+      text-align:center;
+      line-height:60px;
+      border-right:1px solid @base-border-color;
+    }
+    .scent-select{
+      padding:10px;    
+    }
+    .scent-list{
+      .wrap(auto);
+      li{
+        float:left;
+        font-size:16px;
+        padding:0 10px;
+        margin-left:10px;
+        border:1px solid @base-border-color;
+      }
+      .scent-name{
+        color:#6B5618;
+        padding-right:5px;
+      }
+      .spu-scent-del{
+        text-decoration:none;
+        font-weight:bold;
+      }
+    }
+    .scent-desc{
+      width:710px;
+      margin:10px;
+      padding:5px 10px;
+      height:60px;
+    }
+  }
+  .scent-action{
+     text-align:center;
+  }
+}

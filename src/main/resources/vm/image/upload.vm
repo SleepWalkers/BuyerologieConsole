@@ -1,0 +1,72 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "上传图片"}])
+#set($title = "图片>上传图片")
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2>网站所需图片</h2>
+				</div>
+				<div class="panel-body">
+					<form  class="form-horizontal" action="/api/image/upload" method="post" enctype="multipart/form-data">	
+						<input name="_synToken" type="hidden" value="$!{_synToken}">
+							<div class="mod-viewbox-bd">
+							
+							
+								 #if($!{imageList})
+								 <div class="col-xs-12">
+								<div class="panel panel-default" id="p1">
+									<div class="panel-body">
+									<a href="/image">后退</a>
+									<br>
+									#foreach($image in $!imageList)
+								     <img src="$!{image}" width="250px;" height="250px;" style="backround-color:#000"/>
+									 $image
+									 <br>
+								    #end
+								    	</div></div></div>
+	        						#end
+	        					
+	        						
+	        						<div class="form-group">
+									<div class="mod-grid mod-korows">
+										<b style="color:red">本页面为网站所需各个图片</b>
+										<table class="table md0">
+											<thead>
+												<tr>
+													<th>编号</th>
+													<th>图片</th>																														
+													<th>操作</th>
+												</tr>
+											</thead>
+											<tbody>
+												 <tr>
+	                                                <td></td>												
+													<td><input type="file" name="imageFile"/></td>
+	                                                <td><a href="javascript:;" class="btn btn-danger" onclick="$(this).parent().parent().remove()">删除</a></td>
+	                                            </tr>
+												<!-- ko foreach: rows -->
+	                                            <tr>
+	                                                <td></td>												
+													<td><input type="file" name="imageFile"/></td>
+	                                                <td><a href="javascript:;" class="btn btn-danger" data-bind="click: $root.removeRow">删除</a></td>
+	                                            </tr>
+	                                            <!-- /ko -->
+	                                        </tbody>
+	                                    </table>
+	                                    <div class="mod-row col-sm-offset-1 col-sm-10">
+	                                        <button type="button" class="btn btn-primary" data-bind="click: addRow.bind($data)">新增</button>
+	                                    </div>
+	                                </div>
+                                </div>
+                            </div>
+							<div class="form-group">
+						 	 	<div class="col-sm-offset-2 col-sm-10">
+					    				<button type="submit" class="btn btn-primary">保存信息</button>
+					    			</div>
+							</div>
+				    		</form>
+					</div>
+    				</div>
+       	 	</div>
+        </div>

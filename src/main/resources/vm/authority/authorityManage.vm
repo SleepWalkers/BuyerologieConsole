@@ -1,0 +1,105 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "相关权限"}])
+#set($title = "权限管理")
+
+
+<div class="row" id="panel-advancedoptions">
+	#if("#checkRole($!{gv_user.userAuth},'ROLE_ADMIN')" == "true" || "#checkRole($!{gv_user.userAuth},'ROLE_USER_MASTER')" == "true")
+		<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2>权限列表 </h2>
+				</div>
+				<div class="panel-body">
+					<div class="mod-viewbox">
+		    				<div class="mod-box">
+							<form action="/authority/list" method="get">
+								<input type="submit" class="btn btn-primary" value="权限列表"/>
+		        				</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	#end
+	
+	<div class="col-xs-12">
+			<div class="panel panel-default" id="p1">
+				<div class="panel-heading">
+					<h2>权限列表 </h2>
+				</div>
+				<div class="panel-body">
+				    <div class="mod-viewbox">
+		    				<div class="mod-box">
+		                    <div class="mod-viewbox">
+        							<form class="form-horizontal mod-ajaxform" action="/api/user/authority/search" method="post">
+                       				<div style="margin-top:10px;margin-bottom:40px;">
+		    							<input type="hidden" name="redirectUrl" value="/user/authority"/>
+		    							<div class="form-group">
+				    					  	<label class="col-xs-4 control-label" for="name">
+				                        	 <b style="color:red">*</b> 手机号：
+			                        		</label>
+			                        		<div class="col-xs-4">
+				    							<input class="form-control" type="text" name="userName" value="#if($!{user})$!{user.username}#end"/>
+				    						</div>
+			    						</div>
+									<div class="form-group">
+								 	 	<div class="col-sm-offset-2 col-sm-10">
+							    				<button type="submit" class="btn btn-primary">确定</button>
+							    			</div>
+									</div>
+		        					</form>
+		                    </div>
+        					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	#if($!{user})
+		<div class="col-xs-12">
+			<div class="panel panel-default" id="p2">
+				<div class="panel-heading">
+					<h2>$!{user.username} 权限管理</h2>
+				</div>
+				<div class="panel-body">
+					<div class="mb10 mt10">
+						<form class="form-horizontal mod-ajaxform" action="/api/user/authority/relate" method="POST">
+							## 隐藏表单域
+							<input type="hidden" name="userId" value="$!{user.id}" />
+		    				<input type="hidden" name="redirectUrl" value="/user/authority?userId=$!{user.id}"/>
+							##
+							
+							<div class="">
+								<select class="select2" multiple  name="authorityArr" style="width: 400px;">
+									#foreach($unrelatedAuthority in $!{unrelatedAuthorities})
+										<option value="$!{unrelatedAuthority.authority}">$!{unrelatedAuthority.zhName}</option>
+									#end
+								</select>
+								<button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> 添加</button>
+							</div>
+						</form>
+					</div>
+					<div>
+						<table class="table table-bordered mb0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>已关联的权限</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+								#foreach($relatedAuthority in $!{userAuths})
+                                <tr>
+                                    <td>$!{relatedAuthority.zhName}</td>
+                                    <td><button class="btn btn-danger btn-sm mod-ajaxdel" mod-data-params="{'userId':$!{user.id},'authority':'$!{relatedAuthority.authority}','redirectUrl':'/user/authority?userId=$!{user.id}'}" mod-data-api="/api/user/authority/unrelate">删除</button></td>
+                                </tr>
+								#end
+                            </tbody>
+                        </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	#end
+</div>

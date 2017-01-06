@@ -1,0 +1,19 @@
+## <!-- 面包屑 -->
+#if($!{breadCrumbs})
+<ol class="breadcrumb">
+	<li>
+		<a href="/">首页</a>
+	</li>
+	#foreach($!breadCrumb in $!breadCrumbs)
+	#if(${breadCrumb.href})
+	<li>
+		<a href="$!{breadCrumb.href}">$!{breadCrumb.name}</a>
+	</li>
+	#else
+	<li class="active">
+		$!{breadCrumb.name}
+	</li>
+	#end
+	#end
+</ol>
+#end

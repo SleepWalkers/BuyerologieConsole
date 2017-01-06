@@ -1,0 +1,119 @@
+@import "./reset.less";
+@import "./dpl.less";
+
+// 方便起见组件统一放到global里引入
+@import "../mod/table.less";
+@import "../mod/grid.less";
+@import "../mod/row.less";
+@import "../mod/box.less";
+@import "../mod/ajaxform.less";
+@import "../mod/viewbox.less";
+@import "../mod/rte.less";
+@import "../mod/tab.less";
+@import "../mod/status.less";
+
+
+
+// 覆盖组件样式
+.wijmo-wijradio {
+  display: inline-block;
+  vertical-align: middle;
+}
+.wijmo-checkbox {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*select{
+  -webkit-appearance: none;
+  height: 24px;
+  background: #fafafa;
+  padding: 0 30px 0 5px;
+  line-height: 20px;
+  vertical-align: middle;
+  border-radius: 2px;
+  border-color: #d3d3d3;
+  color: #212121;
+  background-image: url("@{base-assets-url}/select-right.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+}*/
+
+#page{
+  padding-bottom: 100px;
+  color:@base-color;
+  a{
+     color:@base-color;
+  }
+}
+#header,#footer{
+  text-align:center;
+  border:1px solid @base-border-color;
+  background:url("@{base-assets-url}/header-footer-bg.png") 0 -100px repeat-x #ddd;
+}
+#header{ 
+  position:relative;
+  height: 85px;
+  line-height: 85px;
+  .console-title{
+    font-size:30px;
+     color:#555;
+  }
+  .login-info{
+    height:22px;
+    line-height:22px;
+    font-size:14px;
+    position:absolute;
+    right:20px;
+    bottom:10px;
+    .user-name{
+      color:#02661e;
+    }
+    .user-login,.user-logout{
+      color:#6B5618;
+    }
+  }
+}
+#footer{
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+  z-index: -1;
+  height: 50px;
+  line-height: 50px;
+  a{
+    margin:0 15px;
+    text-decoration: none;
+    color:#666;
+  }
+}
+#content{
+  background:url("@{base-assets-url}/content-bg.png") top center repeat-x #fff;
+  .layout{
+    .wrap(1190px);
+    margin:auto;
+  }
+
+  .col-sub{
+    .col-left(200px);
+    .wijmo-wijtree{
+      width:185px;
+      .min-height(550px);
+      border-top:none;
+    }
+  }
+  .col-main{
+    .col-right(990px);
+  }
+}
+
+#crumb{
+  padding-left:10px;
+  border-right:1px solid @base-border-color;
+  height:30px;
+  line-height:30px;
+  background:url("@{base-assets-url}/header-footer-bg.png") 0 -100px repeat-x #ddd;
+}
+

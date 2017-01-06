@@ -1,0 +1,27 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "CMS-USER"}])
+#set($title = "CMS")
+
+
+
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+		<div class="panel panel-default" id="p1">
+			<div class="panel-heading">
+				<h2>核心页面 > 新增记录 </h2>
+			</div>
+			<div class="panel-body">
+                <form class="form-horizontal mod-ajaxform"   method="post">
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label" for="name">
+                        		<b style="color:red">*</b>记录中文名：
+                    		</label>
+                    		<div class="col-xs-4">
+                   		<input type="text" class="form-control" name="zhName" value="">
+                   		</div>
+         		  	</div>
+                </form>
+        		</div>
+    		</div>
+	</div>
+</div>

@@ -1,0 +1,61 @@
+@import "../common/dpl.less";
+#tag-index{
+  .col-main{
+    position:relative;
+    .tag-title{
+      padding-left: 10px;
+      border-left: 1px solid #AAA;
+      border-right: 1px solid #AAA;
+      height: 40px;
+      line-height: 40px;
+      font-size:16px;
+      font-weight:bold;
+      background: url("http://test.showjoy.com/console/assets/1.0/image/header-footer-bg.png") 0 -100px repeat-x #DDD;
+    }
+    .tag-group-select{
+      position:absolute;
+      top:7px; 
+      right:120px;
+    }
+    .tag-add{
+     position:absolute;
+      top:7px; 
+      right:10px;
+    }
+  }
+}
+
+.tag-table{
+   width:100%;
+   text-align:center;
+   th,td{
+     height:30px;
+     line-height:30px;
+     border: 1px solid #AAA;
+   }
+   th{
+     background:#eee;
+     font-size:14px;
+   }
+   button{
+     padding:0 10px;
+   }
+   input{
+     text-align:center;
+   }
+   .tag-mark{
+     display:inline-block;
+     padding:0 10px;
+     visibility:hidden;
+     font-size:16px;
+     vertical-align:middle;
+   }
+   .tag-mark-unsave{
+     visibility:visible;
+     color:#f00;
+   }
+   .tag-mark-saved{
+     color:#0f0;
+     visibility:visible;
+   }
+}

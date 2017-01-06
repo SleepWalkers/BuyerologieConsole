@@ -1,0 +1,35 @@
+#spu-list .search-form {
+  *zoom: 1;
+  width: auto;
+  padding: 10px;
+}
+#spu-list .search-form:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+#spu-list .search-form li {
+  float: left;
+}
+#spu-list .search-form li.search {
+  margin-left: 100px;
+}
+#spu-list .search-form li.search .search-input {
+  width: 400px;
+}
+#spu-list .search-form li.fr {
+  float: right;
+}
+#spu-list .search-form li.fr .viewall {
+  display: none;
+}
+#spu-list .search-form li.search-status .wijmo-wijcombobox {
+  display: none;
+}
+#spu-list .search-form li.search-status .viewall {
+  display: block;
+}
+#spu-list .spu-grid {
+  text-align: center;
+}

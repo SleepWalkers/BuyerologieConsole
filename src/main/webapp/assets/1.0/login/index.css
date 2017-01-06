@@ -1,0 +1,64 @@
+#content #welcome-login {
+  width: 890px;
+  padding: 77px 50px;
+}
+#content #welcome-login .col-sub {
+  position: relative;
+  width: 500px;
+  text-align: right;
+}
+#content #welcome-login .col-sub .brand-logo {
+  position: absolute;
+  left: 50px;
+  top: 30px;
+}
+#content #welcome-login .col-main {
+  width: 340px;
+}
+.login-form {
+  margin-top: 70px;
+  padding: 10px 45px 50px;
+  border: 1px solid #aaaaaa;
+  border-top: 5px solid #666;
+  text-align: center;
+}
+.login-form li {
+  margin: 15px 0;
+}
+.login-form li label {
+  display: inline-block;
+  width: 60px;
+  margin-right: 20px;
+}
+.login-form input {
+  display: inline-block;
+  width: 150px;
+}
+.login-form .login-authority {
+  height: 22px;
+  position: relative;
+}
+.login-form .login-authority .login-err-msg {
+  color: #f00;
+  display: none;
+  position: absolute;
+  left: 0;
+}
+.login-form .login-authority a {
+  color: #0fc3ff!important;
+  text-decoration: underline;
+  position: absolute;
+  right: 0;
+}
+.login-form .login-action {
+  margin-top: 20px;
+  text-align: right;
+}
+.login-form .login-action input {
+  margin-right: 10px;
+  width: auto;
+}
+.login-form .login-action button {
+  margin-left: 15px;
+  padding: 0 20px;
+}

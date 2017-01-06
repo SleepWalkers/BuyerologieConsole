@@ -1,0 +1,74 @@
+
+.pageTitle {
+	width: 990px;
+	height: 30px;
+	background: #d1d0d1;
+	line-height: 30px;
+	border-bottom-color: #000;
+}
+/*PageLeader*/
+.btnPleader{
+	width:100px;
+	height:25px;
+	}
+.textareaPLeader{
+	font-size:12px;
+	margin-top:-15px;
+	
+	}
+.PLeaderform{
+	clear:left;
+	width:640px;
+	position:relative;
+	margin-left:20px;	
+	margin-top:45px;
+}
+.PLeaderform ul li{
+	margin-top:20px;
+	}
+	
+.topJustify{
+	vertical-align:top;
+}
+.PLeader{
+	width:990px;
+	height:565px;
+	border:thin solid #d1d0d1;
+	}
+.tab{
+	height:20px;
+}
+.PLeader img{
+	float:right;
+	width:103px;
+	height:104px;
+	margin-right:145px;
+	margin-top:40px;
+	}
+.PLeader h4{
+	float:right;
+	height:25px;
+	margin-right:-110px;
+	margin-top:170px;
+}
+.readBtn{
+	position:absolute;
+	top:0px;
+	right:13px;
+	width:95px;
+	height:25px;
+}
+.warningPleader{
+	margin-left:75px;
+	color:red;
+	}
+.btnClear{
+	width:100px;
+	height:25px;
+	margin-left:425px;
+	}
+.inputLeader{
+	width:450px;
+	height:25px;
+	}
+
