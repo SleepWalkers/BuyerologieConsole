@@ -15,10 +15,13 @@ public class FileUploadUtils {
 
     private static final Logger logger                   = Logger.getLogger(FileUploadUtils.class);
 
-    private static final String ROOT_PATH                = "buyerology";
-    private static final String DEFALUT_LINUX_IMAGE_ROOT = ROOT_PATH + "/image/";
-
     private static final String UPPER_PATH               = "../";
+
+    private static final String ROOT_PATH                = "buyerology";
+
+    private static final String IMAGE_URI                = "/image";
+
+    private static final String DEFALUT_LINUX_IMAGE_ROOT = ROOT_PATH + IMAGE_URI;
 
     private static String getRootPath(int deepth) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -56,8 +59,8 @@ public class FileUploadUtils {
             logger.error("", e);
         }
 
-        String filePath = getImageFileRootPath() + "/" + UUIDUtils.getUUID()
-                          + multipartFile.getOriginalFilename();
+        String fileName = UUIDUtils.getUUID() + multipartFile.getOriginalFilename();
+        String filePath = getImageFileRootPath() + "/" + fileName;
 
         logger.info("文件路径为: " + filePath);
         File file = new File(filePath);
@@ -67,6 +70,10 @@ public class FileUploadUtils {
         } catch (IOException e) {
             logger.error("", e);
         }
-        return filePath.replace(ROOT_PATH, "");
+        return getImagePath(fileName);
+    }
+
+    private static String getImagePath(String fileName) {
+        return IMAGE_URI + "/" + fileName;
     }
 }
