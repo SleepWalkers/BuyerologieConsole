@@ -36,10 +36,11 @@ public class CourseApiController {
     @Secured({ "ROLE_ADMIN", "ROLE_COURSE_MASTER", "ROLE_COURSE_EDITOR" })
     @ResponseBody
     @RequestMapping(value = "/api/course/add", method = RequestMethod.POST)
-    public String newsAdd(@RequestParam String title, @RequestParam String videoId,
-                          @RequestParam String content) throws TopicException {
+    public String newsAdd(@RequestParam String title, @RequestParam boolean isFree,
+                          @RequestParam String videoId, @RequestParam String content)
+                                                                                     throws TopicException {
 
-        courseService.createCourse(0, title, videoId, content);
+        courseService.createCourse(0, isFree, title, videoId, content);
 
         JsonVO jsonVO = new JsonVO(true);
         jsonVO.setIsRedirect(true);
@@ -51,10 +52,10 @@ public class CourseApiController {
     @ResponseBody
     @RequestMapping(value = "/api/course/edit", method = RequestMethod.POST)
     public String newsEdit(@RequestParam int courseId, @RequestParam String title,
-                           @RequestParam String videoId, @RequestParam String content)
-                                                                                      throws TopicException {
+                           @RequestParam boolean isFree, @RequestParam String videoId,
+                           @RequestParam String content) throws TopicException {
 
-        courseService.editCourse(courseId, title, videoId, content);
+        courseService.editCourse(courseId, isFree, title, videoId, content);
         JsonVO jsonVO = new JsonVO(true);
         jsonVO.setIsRedirect(true);
         jsonVO.setRedirectURL("/course/list");
