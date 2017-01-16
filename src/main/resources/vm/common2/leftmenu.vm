@@ -30,7 +30,6 @@
 								<span>首页</span>
 							</a>
 						</li>
-						   
                 		 
 						<li>
 							<a href="javascript:;">
@@ -48,6 +47,7 @@
 							</a>
                 			<ul class="acc-menu">
 								<li><a href="/course/list">尚课列表</a></li>
+								<li><a href="/vip/product/list">会员设置列表</a></li>
                 			</ul>
                 		</li>
 						<li>

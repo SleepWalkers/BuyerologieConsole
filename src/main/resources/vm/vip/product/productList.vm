@@ -1,0 +1,51 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "尚课","name": "会员设置"}])
+#set($title = "尚课-会员设置列表")
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+		<div class="panel panel-default" id="p1">
+			<div class="panel-heading">
+				<h2></h2>
+			</div>
+			<div class="panel-body">
+                #if("#checkRole($!{gv_user.auth},'ROLE_COURSE_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+				<div class=" mt10 mb10">
+					<a href="/vip/product/add" class="btn btn-default">新增</a>
+                </div>
+				#end
+				<div>
+					<table class="table mb0" cellspacing="0">
+						<thead>
+            				<tr>
+                                <th>会员ID</th>
+                                <th>会员名称</th>
+                                <th>会员价格（元）</th>
+                                <th>会员时长（天）</th>
+                				#if("#checkRole($!{gv_user.auth},'ROLE_COURSE_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+                                <th>管理</th>
+                                #end
+                            </tr>
+                        </thead>
+						<tbody>
+								#foreach($vipProduct in $!{vipProducts})
+                                <tr>
+                                    <td>$!{vipProduct.id}</td>
+                                    <td>$!{vipProduct.name}</td>
+                                    <td>$!{vipProduct.price}（元）</td>
+                                    <td>$!{vipProduct.availableDays}（天）</td>
+                					#if("#checkRole($!{gv_user.auth},'ROLE_COURSE_MASTER')"=="true" || "#checkRole($!{gv_user.auth},'ROLE_ADMIN')"=="true")
+									<td>
+										<a href="/vip/product/edit?id=$!{vipProduct.id}"  target="_blank" class="btn btn-default">编辑</a>
+										<a class="btn btn-default mod-ajaxdel" data-refresh="true" mod-data-api="/api/vip/product/delete" mod-data-params="{productId:$!{vipProduct.id}}">删除</a>
+                                    </td>
+                                    #end
+                                </tr>
+								#end
+                        </tbody>
+                    </table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
