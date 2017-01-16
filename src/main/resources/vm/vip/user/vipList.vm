@@ -1,0 +1,41 @@
+#set($isBootstrap = true)
+#set($breadCrumbs = [{"name": "尚课","name": "会员列表"}])
+#set($title = "尚课-会员列表")
+<div class="row" id="panel-advancedoptions">
+	<div class="col-xs-12">
+		<div class="panel panel-default" id="p1">
+			<div class="panel-heading">
+				<h2></h2>
+			</div>
+			<div class="panel-body">
+				<div>
+					<table class="table mb0" cellspacing="0">
+						<thead>
+            				<tr>
+                                <th>用户ID</th>
+                                <th>用户昵称</th>
+                                <th>用户手机号</th>
+                                <th>会员开始时间</th>
+                                <th>会员结束时间</th>
+                            </tr>
+                        </thead>
+						<tbody>
+							#foreach($vip in $vips)
+                                <tr data-id="$!{vip.id}">
+                                    <td>$!{vip.user.id}</td>
+                                    <td>$!{vip.user.nickname}</td>
+                                    <td>$!{vip.user.username}</td>
+                                    <td>$!date.format('yyyy-MM-dd HH:mm:ss ',$!{vip.startTime})</td>
+                                    <td>$!date.format('yyyy-MM-dd HH:mm:ss ',$!{vip.endTime})</td>
+                                </tr>
+							#end
+                        </tbody>
+                    </table>
+				</div>
+				<div>
+					#jpager ("/vip/list?page=",$!{totalPages},$!{currentPage},"")
+				</div>
+			</div>
+	</div>
+</div>
+

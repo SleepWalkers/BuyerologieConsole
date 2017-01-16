@@ -47,6 +47,7 @@
 							</a>
                 			<ul class="acc-menu">
 								<li><a href="/course/list">尚课列表</a></li>
+								<li><a href="/vip/list">会员列表</a></li>
 								<li><a href="/vip/product/list">会员设置列表</a></li>
                 			</ul>
                 		</li>
