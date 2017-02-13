@@ -12,11 +12,12 @@ CKEDITOR.editorConfig = function( config ) {
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.extraPlugins = 'lineheight';
 	config.toolbarGroups = [
+	    { name: 'clipboard',   groups: [ 'undo' ] },
 		{ name: 'links' },
 		{ name: 'insert' },
+		{ name: 'tools' },
 		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
 		{ name: 'others' },
-		
 		'/',
 		{ name: 'basicstyles', groups : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },  
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
