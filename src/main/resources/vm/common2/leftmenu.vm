@@ -61,6 +61,12 @@
                 			</ul>
                 		</li>
 						<li>
+							<a href="/imageUpload">
+								<i class="fa fa-money"></i>
+								<span>上传图片</span>
+							</a>
+                		</li>
+						<li>
 							<a href="/user/authority">
 								<i class="fa fa-money"></i>
 								<span>权限管理</span>
