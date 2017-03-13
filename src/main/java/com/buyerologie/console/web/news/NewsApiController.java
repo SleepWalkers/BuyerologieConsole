@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.buyerologie.common.vo.JsonVO;
 import com.buyerologie.console.utils.FileUploadUtils;
+import com.buyerologie.console.utils.NewsContentImageUtils;
 import com.buyerologie.security.SecurityService;
 import com.buyerologie.topic.NewsService;
 import com.buyerologie.topic.enums.ImageType;
@@ -29,9 +30,10 @@ public class NewsApiController {
     @Secured({ "ROLE_ADMIN", "ROLE_NEWS_MASTER", "ROLE_NEWS_EDITOR" })
     @ResponseBody
     @RequestMapping(value = "/api/news/add", method = RequestMethod.POST)
-    public String newsAdd(@RequestParam String title, @RequestParam String content)
-                                                                                   throws TopicException {
+    public String newsAdd(@RequestParam String title,
+                          @RequestParam String content) throws TopicException {
 
+        content = NewsContentImageUtils.formatImageTag(content);
         newsService.createNews(0, title, content);
 
         JsonVO jsonVO = new JsonVO(true);
@@ -45,6 +47,7 @@ public class NewsApiController {
     @RequestMapping(value = "/api/news/edit", method = RequestMethod.POST)
     public String newsEdit(@RequestParam int newsId, @RequestParam String title,
                            @RequestParam String content) throws TopicException {
+        content = NewsContentImageUtils.formatImageTag(content);
 
         newsService.editNews(newsId, title, content);
 
@@ -81,8 +84,8 @@ public class NewsApiController {
     @RequestMapping(value = "/api/news/image/upload", method = RequestMethod.POST)
     public String newsImage(@RequestParam int newsId, @RequestParam int imageType,
                             @RequestParam(required = false, defaultValue = "0") int imageId,
-                            @RequestParam MultipartFile imageFile, @RequestParam String redirectUrl)
-                                                                                                    throws TopicException {
+                            @RequestParam MultipartFile imageFile,
+                            @RequestParam String redirectUrl) throws TopicException {
 
         String image = FileUploadUtils.uploadImage(imageFile);
 
